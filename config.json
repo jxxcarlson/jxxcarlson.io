@@ -1,0 +1,22 @@
+{
+    "siteTitle": "Jim's place",
+    "outputDir": "_site",
+    "copy": {
+        "/about": "/"
+    },
+    "feed": {
+        "title": "Author's blog",
+        "description": "Author's blog posts",
+        "id": "https://jxxcarlson.io",
+        "link": "https://jxxcarlson.io/posts",
+        "image": "https://jxxcarlson.io/img/logo.png",
+        "copyright": "Copyright: Author",
+        "language": "en",
+        "generator": "Elmstatic",
+        "author": {
+          "name": "Author",
+          "link": "https://jxxcarlson.io/about"
+        }
+    },
+    "tags": ["other", "fp"]
+}
