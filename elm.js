@@ -8773,6 +8773,18 @@ var author$project$Styles$styles = function () {
 						rtfeldman$elm_css$Css$px(600))
 					]))
 			]));
+	var phoneScreen = rtfeldman$elm_css$Css$Media$withMedia(
+		_List_fromArray(
+			[
+				A2(
+				rtfeldman$elm_css$Css$Media$only,
+				rtfeldman$elm_css$Css$Media$screen,
+				_List_fromArray(
+					[
+						rtfeldman$elm_css$Css$Media$minWidth(
+						rtfeldman$elm_css$Css$px(320))
+					]))
+			]));
 	var codeStyle = _List_fromArray(
 		[
 			rtfeldman$elm_css$Css$fontFamilies(
@@ -8810,6 +8822,12 @@ var author$project$Styles$styles = function () {
 								])),
 							rtfeldman$elm_css$Css$fontSize(
 							rtfeldman$elm_css$Css$px(15)),
+							phoneScreen(
+							_List_fromArray(
+								[
+									rtfeldman$elm_css$Css$fontSize(
+									rtfeldman$elm_css$Css$px(18))
+								])),
 							rtfeldman$elm_css$Css$lineHeight(
 							rtfeldman$elm_css$Css$em(1.4))
 						])),
@@ -9196,7 +9214,7 @@ var author$project$Post$metadataHtml = function (post) {
 			author$project$Post$tagsToHtml(post.cp)));
 };
 var elm$core$List$sortBy = _List_sortBy;
-var elm$html$Html$h2 = _VirtualDom_node('h2');
+var elm$html$Html$h3 = _VirtualDom_node('h3');
 var elm$json$Json$Decode$value = _Json_decodeValue;
 var author$project$Posts$main = function () {
 	var sortPosts = function (posts) {
@@ -9223,7 +9241,7 @@ var author$project$Posts$main = function () {
 					_List_fromArray(
 						[
 							A2(
-							elm$html$Html$h2,
+							elm$html$Html$h3,
 							_List_Nil,
 							_List_fromArray(
 								[

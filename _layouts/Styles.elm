@@ -8,6 +8,16 @@ import Html.Styled
 
 
 
+{-
+      @media only screen
+      and (min-device-width : 375px)
+      and (max-device-width : 812px)
+      and (-webkit-device-pixel-ratio : 3)
+
+   mediaQuery [ "screen and (min-width: 320px)", "screen and (max-height: 400px)" ]
+       [ body [ fontSize (px 14) ] ]
+
+-}
 -- foo bar
 
 
@@ -16,6 +26,9 @@ styles =
     let
         wideScreen =
             withMedia [ only screen [ Media.minWidth <| Css.px 600 ] ]
+
+        phoneScreen =
+            withMedia [ only screen [ Media.minWidth <| Css.px 320 ] ]
 
         codeStyle =
             [ fontFamilies [ "Inconsolata", .value monospace ]
@@ -29,6 +42,7 @@ styles =
             , Css.color <| hex "363636"
             , fontFamilies [ "Open Sans", "Arial", .value sansSerif ]
             , fontSize <| px 15
+            , phoneScreen [ fontSize <| px 18 ]
             , lineHeight <| Css.em 1.4
             ]
         , a
