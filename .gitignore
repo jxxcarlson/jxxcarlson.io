@@ -1,1 +1,6 @@
 elm-stuff/
+package-lock.json
+_site/
+node_modules/
+_pages\\*.html
+*\\*.html

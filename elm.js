@@ -5623,6 +5623,22 @@ var author$project$Page$header = _List_fromArray(
 								elm$html$Html$a,
 								_List_fromArray(
 									[
+										elm$html$Html$Attributes$href('/apps')
+									]),
+								_List_fromArray(
+									[
+										elm$html$Html$text('Apps')
+									]))
+							])),
+						A2(
+						elm$html$Html$li,
+						_List_Nil,
+						_List_fromArray(
+							[
+								A2(
+								elm$html$Html$a,
+								_List_fromArray(
+									[
 										elm$html$Html$Attributes$href('/contact')
 									]),
 								_List_fromArray(
@@ -8822,12 +8838,6 @@ var author$project$Styles$styles = function () {
 								])),
 							rtfeldman$elm_css$Css$fontSize(
 							rtfeldman$elm_css$Css$px(15)),
-							phoneScreen(
-							_List_fromArray(
-								[
-									rtfeldman$elm_css$Css$fontSize(
-									rtfeldman$elm_css$Css$px(18))
-								])),
 							rtfeldman$elm_css$Css$lineHeight(
 							rtfeldman$elm_css$Css$em(1.4))
 						])),

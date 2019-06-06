@@ -42,7 +42,8 @@ styles =
             , Css.color <| hex "363636"
             , fontFamilies [ "Open Sans", "Arial", .value sansSerif ]
             , fontSize <| px 15
-            , phoneScreen [ fontSize <| px 18 ]
+
+            --, phoneScreen [ fontSize <| px 24 ]
             , lineHeight <| Css.em 1.4
             ]
         , a
@@ -90,6 +91,8 @@ styles =
                     ]
                 , a [ Css.color <| hex "ffffff", textDecoration none ]
                 ]
+
+            -- , phoneScreen [ fontSize <| px 24, Css.width (px 340) ]
             , wideScreen [ marginTop <| px 0, padding <| px 0, textAlign right ]
             ]
         , class "content"
