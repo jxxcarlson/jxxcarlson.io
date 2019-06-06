@@ -5481,25 +5481,6 @@ var author$project$Page$footer = A2(
 					elm$html$Html$a,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$href('https://minilatex.io')
-						]),
-					_List_fromArray(
-						[
-							elm$html$Html$text('Minilatex.io')
-						]))
-				])),
-			A2(
-			elm$html$Html$div,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$class('link')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$a,
-					_List_fromArray(
-						[
 							elm$html$Html$Attributes$href('https://demo.minilatex.app/')
 						]),
 					_List_fromArray(
@@ -5524,6 +5505,25 @@ var author$project$Page$footer = A2(
 					_List_fromArray(
 						[
 							elm$html$Html$text('Minilatex Reader')
+						]))
+				])),
+			A2(
+			elm$html$Html$div,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$class('link')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$a,
+					_List_fromArray(
+						[
+							elm$html$Html$Attributes$href('https://knode.io')
+						]),
+					_List_fromArray(
+						[
+							elm$html$Html$text('knode.io')
 						]))
 				])),
 			A2(
@@ -8822,12 +8822,6 @@ var author$project$Styles$styles = function () {
 								])),
 							rtfeldman$elm_css$Css$fontSize(
 							rtfeldman$elm_css$Css$px(15)),
-							phoneScreen(
-							_List_fromArray(
-								[
-									rtfeldman$elm_css$Css$fontSize(
-									rtfeldman$elm_css$Css$px(18))
-								])),
 							rtfeldman$elm_css$Css$lineHeight(
 							rtfeldman$elm_css$Css$em(1.4))
 						])),

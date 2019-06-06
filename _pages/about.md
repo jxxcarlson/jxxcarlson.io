@@ -1,60 +1,62 @@
 ---
-title: "Jim Carlson's Home Page"
+title: "The MiniLaTex Project"
 ---
 
+  <script type="text/x-mathjax-config">
+  (function () {
 
-**Current interests:** Type theory and functional programming, mostly Elm and Futhark.  Some projects:
+  MathJax.Hub.Config({
+  	'showProcessingMessages': false,
+  	'messageStyle': 'none'
+  });
 
-- Building **[MiniLaTeX](https://minilatex.io/)**, a subset of LaTeX that can be rendered to HTML.  The most interesting part the parser-renderer, which is written in Elm.   I've used it for [some lecture notes](https://knode.io/424) and various other little projects.
+  if (typeof MathJaxListener !== 'undefined') {
+  	MathJax.Hub.Register.StartupHook('End', function () {
+  		MathJaxListener.invokeCallbackForKey_('End');
+  	});
+  }
 
-- Learning **[Futhark](https://futhark-lang.org/)**, the awesome pure functional language that compiles to highly optimized GPU code.  I'm [writing notes on Futhark](https://knode.io/1242) as my studies progress.
+  })();
+  </script>
 
-- Studying **Type Theory**.  Absolutely fascinating, touching everything from philosophy to logic to mathematics to programming.  What more could one ask for?
-
-- Occasional teaching: a **Python Bootcamp** for math and physics grad students. The basics, some modeling, simulation, and data analysis, e.g. earth's temperature change, 1880 to present, Hubble's original galactic recession data.  Fourier analysis of birdsong (it is data too!): the Nightingale sings at F# 7, the highest F# on the piano keyboard.  Monte Carlo methods. The students are great, and we are having a blast! Here are the [syllabus](https://knode.io/1223) and [GitHub repo](https://github.com/jxxcarlson/python-bootcamp-2019).
-
-**Various talks**
-
-* Upcoming: *MiniLaTeX*, Friday, June 9 at [Lambda Conf 2019](https://lambdaconf.zohobackstage.com/LambdaConf2019?lang=en#/agenda?day=3&lang=en&sessionId=6967000000359716) in Boulder Colorado: [Slides.key](http://minilatex.s3.amazonaws.com/Lambda_Conf_2019.key), [Slides.ppt](http://minilatex.s3.amazonaws.com/Lambda_Conf_2019.pptx)
-
-* [Tarring Files in Elm](https://www.youtube.com/watch?v=ir4sZLIznNI) — a package written in pure Elm to tar and untar files. Oslo, Feb 16, 2019.  Wow, was the hospitality great!
-
-* The MiniLaTeX Project, Carnegie Mellon University, Dept. of Computer Science, October 16, 2018
-
-* [Making a LaTeX to Html Parser in Elm](https://www.youtube.com/watch?v=dmDA7iziSgs&t=95s) — talk at Elm Europe, Paris, June 6, 2018.
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-
-**Space-time coordinates**
-
-I'm a professor emeritus of Mathematics at the University of Utah, presently visiting the Ohio State University.  Next year (2019-20), I will be visiting the Collège de France in Paris. After that, back to New York City.
-
-**Points of contact**
-
-![Image](https://pbs.twimg.com/profile_images/494780344793432069/TKbk_qRT_400x400.jpeg)
-<br />Now he is taller than me.
-
-- Email: jxxcarlson at gmail
-- Elm slack: jxxcarlson
-- Twitter: @epsilon2178
-- [GitHub](https://github.com/jxxcarlson) — Code!
-- [GitHub Pages](https://jxxcarlson.github.io) — various apps, mostly in Elm.
-
-**Some links**
-
-- [Curriculum vita](https://jxxcarlson.io/docs/cv.pdf) — rather out of date, but I am still doing things (and, most importantly, new things)
-<!-- - [Art](https://jxxcarlson.io/art.html) | [Music](https://jxxcarlson.io/music.html) -->
-
-**Footnotes (the best part!)**
+![Image](img/k2b.png)
 
 
-1. [Nightingale has best birdsong because of its complex brain](https://www.theguardian.com/environment/2014/may/04/nightingale-best-birdsong-brain-research). Amazing what 4 billion years of engineering work can come up with.
-3. [Song of the nightingale (link to audio)](https://www.british-birdsongs.uk/common-nightingale/)
-4. [George Oakley, Sonata for Cello and Piano](https://www.youtube.com/watch?v=EsTgr-n53Ow), Inga Kashakashvili, piano, and Jay Campbell, cello.
-5. [Dylan Carlson, piano.  Salt Lake City 2010](https://www.facebook.com/jxxcarlson/videos/1297701281487/)
-6. Why the "xx" in "jxxcarlson"?  Identifiers must be unique.  Nothing to do with mathematics or with an excellent brand of Mexican beer, although both are in some sense applicable.
-7. The bird: a red-throated flycatcher ([Ficedula albicilla](https://www.inaturalist.org/taxa/68519-Ficedula-albicilla))
+The aim of the MiniLaTex project is to provide a way for authors to write LaTeX documents directly on the web. MathJax does a beautiful job of rendering formulas.  But what about the rest?  Sections, tables, cross-references, hyperlinks, etc.? MiniLaTeX, building on MathJax, handles these and many other elements in a  defined subset of LaTeX, sufficient for writing class materials, [lecture notes](https://knode.io/427), etc.
+
+$$
+\int_0^1 x^n dx = \frac{1}{n+1}
+$$
+
+Take a look at [MiniLaTeX Demo](https://demo.minilatex.app/) for a little editor that you can experiment with.  Two panels: source text on the left, rendered text on the right. No login required.
+
+**Delivering content**
+
+There are many ways to deliver MiniLaTeX content to colleagues, students, or the general public. One vehicle is the [MiniLaTeX Reader](https://reader.minilatex.app/).  It can sit inside any web page, along with other material.  The app itself is configured to point at MiniLaTeX Notebook: a set of related documents such as a set of lecture notes.  The Reader can be used to access other MiniLaTeX documents as well those to which it points by default.  An institution can deploy as many Readers on its pages as it needs.
+
+Another vehicle is [knode.io](https://knode.io) — *k* for knowldge.  This is a full content management system. To create content, an author simply registers for an account and begins using  the two-panel editor as with [MiniLaTeX Live](https://jxxcarlson.github.io/app/miniLatexLive/index.html).  Once the author makes the document public, it is accessible to everyone.
+
+ While [knode.io](https://knode.io) has its own search engine, which is one way to discover MiniLaTeX documents, there are several other ways to publish: (1)  Authors have a home page on  knode.io where their documents are listed. (2) every document has a numerical ID, just as we have Social Security numbers. It suffices to provide that ID, like this: [knode.io/427](https://knode.io/427).  (3) Embed a link in any web page, e.g., [Lecture 2: Wave Packets](https://knode.io/427).
+
+**Use in courses**
+
+ MiniLaTeX has been used for courses at the Beijing International Center For Mathematical Research (BICMR), Ohio State University and Colorado State University. Here is one example, a set of lecture notes for a course I taught at BICMR and OSU: [Notes on Quantum Field Theory](https://knode.io/427).
 
 
+**Contact**
+If you have questions or comments regarding MiniLaTeX or the MiniLaTeX services above, please contact Jim Carlson:
 
-![Hummingbird](/img/flycatcher.jpg)
+ - **Email:** jxxcarlson at gmail
+ - **Phone:** 617-852-7490
+ - **Twitter:** @epsilon2718
+
+We plan to make substantial improvements to all parts of the project over the summer of 2019.
+
+— [Jim](https://jxxcarlson.io)
+
+PS. I am giving a talk on MiniLaTeX on Friday, June 9 at [Lambda Conf 2019](https://lambdaconf.zohobackstage.com/LambdaConf2019?lang=en#/agenda?day=3&lang=en&sessionId=6967000000359716) in Boulder Colorado.
+
+[Talks on MiniLaTeX](https://minilatex.io/talks.html)
