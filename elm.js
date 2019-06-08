@@ -5428,7 +5428,6 @@ var author$project$Page$githubIcon = function () {
 }();
 var elm$html$Html$a = _VirtualDom_node('a');
 var elm$html$Html$div = _VirtualDom_node('div');
-var elm$html$Html$img = _VirtualDom_node('img');
 var elm$json$Json$Encode$string = _Json_wrap;
 var elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -5437,19 +5436,12 @@ var elm$html$Html$Attributes$stringProperty = F2(
 			key,
 			elm$json$Json$Encode$string(string));
 	});
-var elm$html$Html$Attributes$alt = elm$html$Html$Attributes$stringProperty('alt');
 var elm$html$Html$Attributes$class = elm$html$Html$Attributes$stringProperty('className');
 var elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		elm$html$Html$Attributes$stringProperty,
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
-};
-var elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
 var author$project$Page$footer = A2(
 	elm$html$Html$div,
@@ -5460,15 +5452,34 @@ var author$project$Page$footer = A2(
 	_List_fromArray(
 		[
 			A2(
-			elm$html$Html$img,
+			elm$html$Html$div,
 			_List_fromArray(
 				[
-					elm$html$Html$Attributes$alt('Author\'s blog'),
-					elm$html$Html$Attributes$src('/img/logo.png'),
-					A2(elm$html$Html$Attributes$attribute, 'style', 'float: left; padding-top: 7px'),
-					A2(elm$html$Html$Attributes$attribute, 'width', '60')
+					A2(elm$html$Html$Attributes$attribute, 'style', 'float: left; padding-left: 12px')
 				]),
-			_List_Nil),
+			_List_fromArray(
+				[
+					elm$html$Html$text('Built with Elmstatic')
+				])),
+			A2(
+			elm$html$Html$div,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$class('link')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$a,
+					_List_fromArray(
+						[
+							elm$html$Html$Attributes$href('https://booklib.io')
+						]),
+					_List_fromArray(
+						[
+							elm$html$Html$text('Booklib.io')
+						]))
+				])),
 			A2(
 			elm$html$Html$div,
 			_List_fromArray(
@@ -5547,8 +5558,16 @@ var author$project$Page$footer = A2(
 						]))
 				]))
 		]));
+var elm$html$Html$img = _VirtualDom_node('img');
 var elm$html$Html$li = _VirtualDom_node('li');
 var elm$html$Html$ul = _VirtualDom_node('ul');
+var elm$html$Html$Attributes$alt = elm$html$Html$Attributes$stringProperty('alt');
+var elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
 var author$project$Page$header = _List_fromArray(
 	[
 		A2(

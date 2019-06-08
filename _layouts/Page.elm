@@ -83,13 +83,12 @@ header =
 footer : Html Never
 footer =
     div [ class "footer" ]
-        [ img
-            [ alt "Author's blog"
-            , src "/img/logo.png"
-            , attribute "style" "float: left; padding-top: 7px"
-            , attribute "width" "60"
+        [ div [ attribute "style" "float: left; padding-left: 12px" ]
+            [ text "Built with Elmstatic" ]
+        , div [ class "link" ]
+            [ a [ href "https://booklib.io" ]
+                [ text "Booklib.io" ]
             ]
-            []
         , div [ class "link" ]
             [ a [ href "https://minilatex.io" ]
                 [ text "Minilatex.io" ]

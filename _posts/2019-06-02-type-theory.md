@@ -16,8 +16,29 @@ the subject better.  The approach using Agda,
 which stays close to the type theory of Per Martin-Löf, is
 an attractive feature of these books.
 
-NOTE: I've found Emacs to work more reliably with Agda than Atom.
+### Notes
+
+I've found Emacs to work more reliably with Agda than Atom.
 I'd be interested to hear what the experience of others is.
+
+You will
+need to install the Iowa Agda Library to do the exercises in
+_Verified Programming_.  Then edit the file `$HOME/.agda/libraries` so that
+it looks like the below.
+
+```
+/usr/local/lib/agda/standard-library.agda-lib
+/Users/carlson/dev/agda/ial/.agda-lib
+```
+
+Once this is done, the file `$Home/.agda/defaults` must consist of the
+line `standard-library` or `ial` as the case may be.  You will have to
+create the file corresponding to `/Users/carlson/dev/agda/ial/.agda-lib`:
+
+```
+name: ial
+include: .
+```
 
 ### Other Agda resources
 
