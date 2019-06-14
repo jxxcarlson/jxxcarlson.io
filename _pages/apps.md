@@ -10,8 +10,9 @@ Most of these implement some kind of model.  (Code is [here](https://github.com/
 - [Schelling's Segregation Model](https://jxxcarlson.github.io/app/schelling.html). A simple model formulated in 1971 by economist Thomas Schelling to help understand patterns of racial segregation.
 [Medium.com article](https://medium.com/@jxxcarlson/schellings-segregation-model-i-43e612241b62)
 
-- [Diffusion of Heat](https://jxxcarlson.github.io/app/heat-model.html).  Uses a
-discrete version of the heat equation.
+- [Diffusion of Heat](https://jxxcarlson.github.io/app/heat-model-gl.html).  Uses a
+discrete version of the heat equation.  This is the WebGL version, which renders the
+model faster than [the SVG version](https://jxxcarlson.github.io/app/heat-model.html)
 
 - [Conways' Game of Life](https://jxxcarlson.github.io/app/gameoflife2.html).  You can click
 to toggle cells on or off.

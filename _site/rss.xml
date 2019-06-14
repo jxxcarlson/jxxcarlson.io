@@ -4,7 +4,7 @@
         <title>Author&apos;s blog</title>
         <link>https://jxxcarlson.io/posts</link>
         <description>Author&apos;s blog posts</description>
-        <lastBuildDate>Sat, 08 Jun 2019 16:00:14 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Jun 2019 13:22:46 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Elmstatic</generator>
         <language>en</language>
@@ -15,7 +15,7 @@
         </image>
         <copyright>Copyright: Author</copyright>
         <item>
-            <title><![CDATA[Type Theory, Agda and Some Good Books]]></title>
+            <title><![CDATA[Type Theory, Agda and Some Good Books Thereon]]></title>
             <link>https://jxxcarlson.io/posts/2019-06-02-type-theory</link>
             <guid>https://jxxcarlson.io/posts/2019-06-02-type-theory</guid>
             <pubDate>Sun, 02 Jun 2019 00:00:00 GMT</pubDate>
@@ -29,8 +29,8 @@ Verified Functional Programming in Agda, by Aaron Stump, is
 also quite good, though pricey: $79.95 paperback, $51.19 kindle.
 Ouf! I recommend both; they are certainly helping me to understand
 the subject better.  The approach using Agda,
-which stays close to the type theory of Per Martin-Löf, is
-an attractive...]]></description>
+which stays close to the type theory of Swedish philosopher-logician
+Per...]]></description>
         </item>
         <item>
             <title><![CDATA[All posts]]></title>

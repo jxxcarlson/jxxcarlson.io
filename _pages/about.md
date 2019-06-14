@@ -3,21 +3,21 @@ title: "Jim Carlson's Home Page"
 ---
 
 
-**Current interests:** Type theory and functional programming, mostly Elm and Futhark.  Some projects:
+**Current interests:** Type theory (Martin-Löf, HOTT) and functional programming, mostly Elm and Futhark.  Some projects:
 
 - Building **[MiniLaTeX](https://minilatex.io/)**, a subset of LaTeX that can be rendered to HTML.  The most interesting part is the parser-renderer, which is written in Elm.   I've used it for [some lecture notes](https://knode.io/424) and various other little projects.
 
 - Learning **[Futhark](https://futhark-lang.org/)**, the awesome pure functional language that compiles to highly optimized GPU code.  I'm [writing notes on Futhark](https://knode.io/1242) as my studies progress.
 
-- Studying **Type Theory**.  Absolutely fascinating, touching everything from philosophy to logic to mathematics to programming.  What more could one ask for?
+- Learning **Type Theory**.  Absolutely fascinating, touching everything from philosophy to logic to mathematics to programming.  What more could one ask for?  Currently reading _[Programming Language Foundations in Agda](https://plfa.github.io/)_, by Philip Wadler and _Verified Functional Programming in Agda_, by Aaron Stump.  Both are based on Per Martin-Löf's work and both give down-to-earth treatments of how to prove theorems using type theory.
 
 - Occasional teaching: a **Python Bootcamp** for math and physics grad students. The basics, some modeling, simulation, and data analysis, e.g. earth's temperature change, 1880 to present, Hubble's original galactic recession data.  Fourier analysis of birdsong (it is data too!): the Nightingale sings at F# 7, the highest F# on the piano keyboard.  Monte Carlo methods. The students are great, and we are having a blast! Here are the [syllabus](https://knode.io/1223) and [GitHub repo](https://github.com/jxxcarlson/python-bootcamp-2019).
 
 **Various talks**
 
-* Upcoming: *MiniLaTeX*, Friday, June 9 at [Lambda Conf 2019](https://lambdaconf.zohobackstage.com/LambdaConf2019?lang=en#/agenda?day=3&lang=en&sessionId=6967000000359716) in Boulder Colorado: [Slides.key](http://minilatex.s3.amazonaws.com/Lambda_Conf_2019.key), [Slides.ppt](http://minilatex.s3.amazonaws.com/Lambda_Conf_2019.pptx)
+* *MiniLaTeX*, Friday, June 9 at [Lambda Conf 2019](https://lambdaconf.zohobackstage.com/LambdaConf2019?lang=en#/agenda?day=3&lang=en&sessionId=6967000000359716) in Boulder Colorado: [Slides.key](http://minilatex.s3.amazonaws.com/Lambda_Conf_2019.key), [Slides.ppt](http://minilatex.s3.amazonaws.com/Lambda_Conf_2019.pptx)
 
-* [Tarring Files in Elm](https://www.youtube.com/watch?v=ir4sZLIznNI) — a package written in pure Elm to tar and untar files. Oslo, Feb 16, 2019.  Wow, was the hospitality great!
+* [Tarring Files in Elm](https://www.youtube.com/watch?v=ir4sZLIznNI) — a package written in pure Elm to tar and untar files. Oslo Elm Day, Feb 16, 2019.  Wow, was the hospitality great!
 
 * The MiniLaTeX Project, Carnegie Mellon University, Dept. of Computer Science, October 16, 2018
 
@@ -27,7 +27,8 @@ title: "Jim Carlson's Home Page"
 
 **Space-time coordinates**
 
-I'm a professor emeritus of Mathematics at the University of Utah, presently visiting the Ohio State University.  Next year (2019-20), I will be visiting the Collège de France in Paris. After that, back to New York City.
+I'm a professor emeritus of Mathematics at the University of Utah, presently visiting the Ohio State University.  For the last seven years, I have also held a visitig scholar position at BICMR,
+the Beijing International Center for Mathematical Research at Peking University. Next year (2019-20), I will be visiting the Collège de France in Paris. After that, back to New York City.
 
 **Points of contact**
 
