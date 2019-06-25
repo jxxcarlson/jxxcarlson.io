@@ -5,26 +5,9 @@ title: "The MiniLaTex Project"
 ![Image](/img/k2b.png)
 
 
-  <script type="text/x-mathjax-config">
-  (function () {
 
-  MathJax.Hub.Config({
-  	'showProcessingMessages': false,
-  	'messageStyle': 'none'
-  });
 
-  if (typeof MathJaxListener !== 'undefined') {
-  	MathJax.Hub.Register.StartupHook('End', function () {
-  		MathJaxListener.invokeCallbackForKey_('End');
-  	});
-  }
-
-  })();
-  </script>
-
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-[MiniLaTeX Demo](https://demo.minilatex.app/) | [MiniLaTeX Reader](https://reader.minilatex.app/)
+[Math + Markdown Demo](https://markdown.minilatex.app/) | [MiniLaTeX Demo](https://demo.minilatex.app/) | [MiniLaTeX Reader](https://reader.minilatex.app/)
 | [KNODE.IO](https://knode.io)
 
 The aim of the MiniLaTex project is to provide a way for authors to write LaTeX documents directly on the web. MathJax does a beautiful job of rendering formulas.  But what about the rest?  Sections, tables, cross-references, hyperlinks, etc.? MiniLaTeX, building on MathJax, handles these and many other elements in a  defined subset of LaTeX, sufficient for writing class materials, [lecture notes](https://knode.io/427), etc.
