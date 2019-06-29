@@ -19,3 +19,5 @@ to toggle cells on or off.
 
 - [Gambler's Ruin](https://jxxcarlson.github.io/app/gamblers_ruin.html). Simulation of the
 classic coin-tossing game. [Medium.com article](https://medium.com/@jxxcarlson/about-gamblers-ruin-6c30903bbbe3)
+
+- [A Fake Drum App](https://jxxcarlson.github.io/app/drumlanguage.html)

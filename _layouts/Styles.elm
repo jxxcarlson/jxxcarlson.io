@@ -42,8 +42,6 @@ styles =
             , Css.color <| hex "363636"
             , fontFamilies [ "Open Sans", "Arial", .value sansSerif ]
             , fontSize <| px 15
-
-            --, phoneScreen [ fontSize <| px 24 ]
             , lineHeight <| Css.em 1.4
             ]
         , a

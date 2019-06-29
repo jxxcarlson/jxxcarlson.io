@@ -5511,11 +5511,11 @@ var author$project$Page$footer = A2(
 					elm$html$Html$a,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$href('https://minilatex.io')
+							elm$html$Html$Attributes$href('https://markdown.minilatex.app/')
 						]),
 					_List_fromArray(
 						[
-							elm$html$Html$text('Minilatex.io')
+							elm$html$Html$text('MathMarkdown Demo')
 						]))
 				])),
 			A2(
@@ -5554,6 +5554,25 @@ var author$project$Page$footer = A2(
 					_List_fromArray(
 						[
 							elm$html$Html$text('Minilatex Reader')
+						]))
+				])),
+			A2(
+			elm$html$Html$div,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$class('link')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$a,
+					_List_fromArray(
+						[
+							elm$html$Html$Attributes$href('https://knode.io')
+						]),
+					_List_fromArray(
+						[
+							elm$html$Html$text('knode.io')
 						]))
 				])),
 			A2(

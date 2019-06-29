@@ -1,6 +1,11 @@
 elm-stuff/
+<<<<<<< HEAD
 package-lock.json
 _site/
 node_modules/
 _pages\\*.html
 *\\*.html
+=======
+*\\*.html
+_site/
+>>>>>>> 0badbae59f8b6b40f13495d65bf7c3f72cef783f
