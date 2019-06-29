@@ -3,6 +3,8 @@ title: "A Fake Drum Language App"
 tags: elm
 ---
 
+![Slit drum](http://noteimages.s3.amazonaws.com/jim_images/slit-drums.png)
+
 ## The Information (James Gleick)
 
 Some timw ago, I read James Gleick's book *The Information: a History,
