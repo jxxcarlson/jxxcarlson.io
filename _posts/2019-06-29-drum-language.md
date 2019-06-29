@@ -7,7 +7,7 @@ tags: elm
 
 ## The Information (James Gleick)
 
-Some timw ago, I read James Gleick's book *The Information: a History,
+Some time ago, I read James Gleick's book *The Information: a History,
 a Theory, a Flood.*  In the first chapter, he recounts the remarkable
 discovery of John F. Carrington, an English missionary, who took up
 residence in the Congo in 1938, working for the Baptist Missionary Society.
@@ -33,7 +33,7 @@ information to reconstruct the original sentence.
 ## An App
 
 As a completely useless but fun exercise, I decided to make a
-little app that will turn text in to drum language.  My approach
+little app that will turn text into (a fake) drum language.  My approach
 was to map each letter a--z to a phonetic class, then map phonetic
 classes to musical pitches.  The phonetic class of *a, e, i, o, u*
 is VOWEL.  Consonants are divided into various classes, e.g., *m, n*
@@ -45,7 +45,7 @@ The pitches used to represent the pitch classes are **G2 C3, E3, F3, G3, Bb3, D*
 — a dominant ninth chord.  This choice of mapping makes the drumming sound
 relatively harmonius.
 
-The string "G3 G2 C3 C3 G2" in the example just given is finally
+The string "G3 G2 C3 C3 G2" in the example just given is
 sent to the computer's audio processor to be rendered for the
 user's listening enjoyment.  The app, which you may try out
 [here](https://jxxcarlson.github.io/app/drumlanguage.html), looks like this:
