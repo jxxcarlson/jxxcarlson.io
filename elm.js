@@ -5492,6 +5492,25 @@ var author$project$Page$footer = A2(
 					elm$html$Html$a,
 					_List_fromArray(
 						[
+							elm$html$Html$Attributes$href('https://markdown.minilatex.app/')
+						]),
+					_List_fromArray(
+						[
+							elm$html$Html$text('Markdown.minilatex.app')
+						]))
+				])),
+			A2(
+			elm$html$Html$div,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$class('link')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$a,
+					_List_fromArray(
+						[
 							elm$html$Html$Attributes$href('https://minilatex.io')
 						]),
 					_List_fromArray(

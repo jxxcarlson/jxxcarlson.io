@@ -2,8 +2,9 @@
 title: "Jim Carlson's Home Page"
 ---
 
+![Van Gogh](http://jxxcarlson.s3.amazonaws.com/vangogh600.jpg)
 
-**Current interests:** Type theory (Martin-Löf, HOTT) and functional programming, mostly Elm and Futhark.  Some projects:
+**Current interests:** Type theory (Martin-Löf, HoTT) and functional programming, mostly Elm and Futhark.  Some projects:
 
 - Building **[MiniLaTeX](https://minilatex.io/)**, a subset of LaTeX that can be rendered to HTML.  The most interesting part is the parser-renderer, which is written in Elm.   I've used it for [some lecture notes](https://knode.io/424) and various other little projects.
 
