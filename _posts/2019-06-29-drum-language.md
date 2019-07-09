@@ -48,7 +48,7 @@ relatively harmonius.
 The string "G3 G2 C3 C3 G2" in the example just given is
 sent to the computer's audio processor to be rendered for the
 user's listening enjoyment.  The app, which you may try out
-[here](https://jxxcarlson.github.io/app/drumlanguage.html), looks like this:
+**[(HERE)](https://jxxcarlson.github.io/app/drumlanguage.html)**, looks like this:
 
 ![Drum app](http://noteimages.s3.amazonaws.com/jim_images/drum_app.png)
 
@@ -65,13 +65,13 @@ would employ a more faithful mapping.
 Gleick writes that Carrington eventually learned to drum, mainly in Kele, a
 Bantu language in what is now Eastern Zaire.  He recounts this story:
 
-> A Lokele villager said of Carrington "He is not really
+> *A Lokele villager said of Carrington "He is not really
 European, despite the color of his skin. He used to be from
 our village, one of us. After he died, the spirits made a mistake
 and sent him off far away to a village of whites to enter the
 body of a little baby who was born of a white woman instead
 of one of ours. But he belongs to us, he could not forget where
 he came from, and so he came back.  If he is a bit awkward on the
-drums, this is because of the poor education that the whites gave him."
+drums, this is because of the poor education that the whites gave him."*
 
 There is much more in Gleick's book. It is really good read.
