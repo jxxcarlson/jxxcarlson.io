@@ -4,6 +4,13 @@ title: "Jim Carlson's Home Page"
 
 ![Van Gogh](http://jxxcarlson.s3.amazonaws.com/vangogh600.jpg)
 
+**What's new:**
+
+- *September 8, 2020.* I will be participating in the [Recurse Center's](https://recurse.com)
+  fall program, September 21—December 11, 2020. Really excited about this.
+  Have common interests with many of the participants and it will be a
+  great opportunity to learn and work with others.
+
 **Current interests:** Type theory (Martin-Löf, HoTT) and functional programming, mostly Elm and Futhark.  Some projects:
 
 - Building **[MiniLaTeX](https://minilatex.io/)**, a subset of LaTeX that can be rendered to HTML.  The most interesting part is the parser-renderer, which is written in Elm.   I've used it for [some lecture notes](https://knode.io/424) and various other little projects.
