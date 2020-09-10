@@ -5,6 +5,8 @@ tags: elm
 
 ![Slit drum](http://noteimages.s3.amazonaws.com/jim_images/slit-drums.png)
 
+[>> Fake Drum App](https://jxxcarlson.github.io/app/drumlanguage.html): Tested in Firefox
+
 ## The Information (James Gleick)
 
 Some time ago, I read James Gleick's book *The Information: a History,
