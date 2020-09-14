@@ -5,7 +5,7 @@ tags: elm
 
 ![Slit drum](http://noteimages.s3.amazonaws.com/jim_images/slit-drums.png)
 
-[>> Fake Drum App](https://jxxcarlson.github.io/app/drumlanguage.html): Tested in Firefox
+[>> Fake Drum Language App](https://jxxcarlson.github.io/app/drumlanguage.html) — only works in Firefox
 
 ## The Information (James Gleick)
 
