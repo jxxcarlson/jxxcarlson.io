@@ -18,5 +18,6 @@
           "link": "https://jxxcarlson.io/about"
         }
     },
-    "tags": ["other", "fp", "climate-change", "elm", "art", "code", "rc", "log", "music"]
+    "tags": ["other", "fp", "climate-change", "elm", "art", "code"
+      , "rc", "log", "music", "haskell"]
 }
