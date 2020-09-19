@@ -2,7 +2,7 @@
 title: "Jim Carlson's Home Page"
 ---
 
-![Van Gogh](http://jxxcarlson.s3.amazonaws.com/vangogh600.jpg)
+<img src="/img/squares-narrow-3.jpg" width="600px">
 
 **What's new:**
 
@@ -54,6 +54,8 @@ the Beijing International Center for Mathematical Research at Peking University.
 
 - [Curriculum vita](https://jxxcarlson.io/docs/cv.pdf) — rather out of date, but I am still doing things (and, most importantly, new things)
 <!-- - [Art](https://jxxcarlson.io/art.html) | [Music](https://jxxcarlson.io/music.html) -->
+
+- [A Composition](https://soundcloud.com/search/sounds?q=carlson%20waltz) -
 
 **Footnotes (the best part!)**
 
