@@ -9,8 +9,8 @@ title: "Jim Carlson's Home Page"
 - *September 8, 2020.* I will be participating in the [Recurse Center's](https://recurse.com)
   fall program, September 21—December 11, 2020. Really excited about this.
   Have common interests with many of the participants and it will be a
-  great opportunity to learn and work with others.  See the [RC](https://jxxcarlson.io/tags/rc/)
-  section of this blog.
+  great opportunity to learn and work with others.  See the **[RC section](https://jxxcarlson.io/tags/rc/)**
+  of this blog.
 
 **Current interests:** Type theory (Martin-Löf, HoTT) and functional programming, mostly Elm and Futhark.  Some projects:
 
