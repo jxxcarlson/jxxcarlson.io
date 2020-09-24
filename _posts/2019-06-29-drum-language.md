@@ -1,6 +1,6 @@
 ---
 title: "A Fake Drum Language App"
-tags: elm
+tags: elm music
 ---
 
 ![Slit drum](http://noteimages.s3.amazonaws.com/jim_images/slit-drums.png)

@@ -4,6 +4,12 @@ title: "Jim Carlson's Home Page"
 
 <img src="/img/squares-narrow-3.jpg" width="600px">
 
+[RC](https://jxxcarlson.io/tags/rc/) | [Elm](https://jxxcarlson.io/tags/elm/)
+     | [Haskell](https://jxxcarlson.io/tags/haskell/)
+  | [Music](https://jxxcarlson.io/tags/music/)  | [Art](https://jxxcarlson.io/tags/art/)
+  | [Type Theory](https://jxxcarlson.io/tags/type-theory/) | [Futhark](https://jxxcarlson.io/tags/futhark/)
+  | [Misc](https://jxxcarlson.io/tags/misc/)
+
 **What's new:**
 
 - *September 8, 2020.* I will be participating in the [Recurse Center's](https://recurse.com)

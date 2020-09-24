@@ -1,6 +1,6 @@
 ---
 title: "The Greenhouse Equation"
-tags: climate-change
+tags: climate-change misc
 ---
 
  <script type="text/x-mathjax-config">
