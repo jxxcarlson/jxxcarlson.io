@@ -1,6 +1,6 @@
 ---
 title: "Type Theory, Agda and Some Good Books Thereon"
-tags: fp
+tags: fp type-theory
 ---
 
 
