@@ -115,10 +115,10 @@ ffmpeg -i duet.aiff duet.mp3
   Your browser does not support the audio element.
 </audio>
 
-*Nervouse Chase* is an exercise in the use of L-systems in musical composition, per Haskell School of Music, 
+*Nervous Chase* is an exercise in the use of L-systems in musical composition, per Haskell School of Music, 
 chapter 13.  [L-systems](https://en.wikipedia.org/wiki/L-system) were developed in 1968 
 by the Dutch-Hungarian theoretical biologist Aristid Lindenmayer as a matheamtical model to describe
-the growth and development of organisms such as algae and trees.  He*re is a simple example.  The L-system
+the growth and development of organisms such as algae and trees.  Here is a simple example.  The L-system
 has two symbols, A and B, where A is the *axiom*.  It also has two *production rules*, A -> AB and B -> A.
 Starting with the axiom, one uses the rules to generate ever more complex sequences of symbols:
 
