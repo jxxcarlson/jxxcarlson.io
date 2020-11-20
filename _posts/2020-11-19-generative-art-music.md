@@ -9,7 +9,12 @@ tags: code fp music art rc
 
 The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were written using Paul Hudak's Haskell library, *Euterpea*. I've learned everything that went into these compositions from *The Haskell School of Music*, by Paul Hudak and Donya Quick, and also from [Donya Quick's website](http://donyaquick.com/) and other resources she has published on the web.
 
-The last piece, *Space Invaders*, is based on the notion of random walk (Brownian motion).  Random walk is, among other things, a method for generating sequences of random numbers.  These sequences can be used to make visual art as well as music.  We illustrate this with remarks and images at the end of this post.
+The last piece, *Space Invaders*, is based on the notion of random walk (Brownian motion).  Random walk is, among other things, a method for generating sequences of random numbers.  These sequences can be used to make visual art as well as music.  We illustrate this with remarks and images at the end of this post. The image below, which depicts the three  lines of MIDI music in *Space Invaders*, illustrates the difference between the two kinds of random sequences.  Can you guess
+which type of sequence is used for each line of music?
+
+**Comment.** Musical composition is the art of balancing novelty with structure.  Pure randomness is fleetingly entertaining, but not  musically satisfying.  If it is used, it must be managed so as to yield a composition with some structure.
+
+<img src="/img/random-white-brown.png" width=600>
 
 #### Duet
 
