@@ -4,7 +4,7 @@
         <title>Author&apos;s blog</title>
         <link>https://jxxcarlson.io/posts</link>
         <description>Author&apos;s blog posts</description>
-        <lastBuildDate>Fri, 20 Nov 2020 13:29:51 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Nov 2020 13:31:52 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Elmstatic</generator>
         <language>en</language>
@@ -488,12 +488,11 @@ but more sophist...]]></description>
 
 November 19, 2020
 
-The pieces below were written using Paul Hudak's Haskell library, Euterpea.
-I've learned everything that went into these compositions from The Haskell School of Music, by Paul Hudak and Donya Quick, and also from Donya Quick's website.
+The three pieces below, Duet, Nervous Chase, and Space Invadersm were written using Paul Hudak's Haskell library, Euterpea. I've learned everything that went into these compositions from The Haskell School of Music, by Paul Hudak and Donya Quick, and also from Donya Quick's website and other resources she has published on the web.
 
 Here is the repo for the code.  It is badly in need of some cleanup and editing.  Soon!
 
-Below is a short snippet of Euterpea code, the "theme" from which Duet is composed.  It reads as follows: Make a line of music beginning wi...]]></description>
+Below is a short snippet of Euterpea code,...]]></description>
         </item>
     </channel>
 </rss>

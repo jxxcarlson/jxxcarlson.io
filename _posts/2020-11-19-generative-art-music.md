@@ -7,8 +7,7 @@ tags: code fp music art rc
 
 *November 19, 2020* 
 
-The pieces below were written using Paul Hudak's Haskell library, *Euterpea*.
-I've learned everything that went into these compositions from *The Haskell School of Music*, by Paul Hudak and Donya Quick, and also from [Donya Quick's website](http://donyaquick.com/).
+The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*m were written using Paul Hudak's Haskell library, *Euterpea*. I've learned everything that went into these compositions from *The Haskell School of Music*, by Paul Hudak and Donya Quick, and also from [Donya Quick's website](http://donyaquick.com/) and other resources she has published on the web.
 
 Here is the [repo for the code](https://github.com/jxxcarlson/euterpea-exercises).  It is badly in need of some cleanup and editing.  Soon!
 
