@@ -256,7 +256,7 @@ using some Haskell code.
 - [Brownian Motion, Wikipedia](https://en.wikipedia.org/wiki/Brownian_motion)
 
 [This post](https://jxxcarlson.io/posts/2020-09-22-gen-art/)
-explains the code used.
+explains the basics of the code used.
 
 ### Random Walk
 
