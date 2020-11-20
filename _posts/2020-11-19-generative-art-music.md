@@ -17,8 +17,10 @@ The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were writ
   Your browser does not support the audio element.
 </audio> 
 
+
+
 <audio controls>
-  <source src="/audio/duet.wav type="audio/x-wav">
+  <source src="/audio/duet.wav" type="audio/x-wav">
   Your browser does not support the audio element.
 </audio> 
 
