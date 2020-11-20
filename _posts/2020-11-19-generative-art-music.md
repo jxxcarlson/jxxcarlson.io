@@ -188,12 +188,14 @@ of integers.  Here is the bounded random walk generator:
 
 ```
 boundedRandomWalk :: (Int, Int) -> Int -> Int -> Int -> [Int]
-boundedRandomWalk (lowerBound, upperBound) start step seed = recInts (seed + magicNumber) (mkStdGen seed) where
-    recInts current g = let 
-                            (i,g') = next g 
-                            delta = (2 * (mod i 2) - 1) * step
-                            current' = bounce (lowerBound, upperBound) start step $ current + delta
-                            in current' : recInts current' g'
+boundedRandomWalk (lowerBound, upperBound) start step seed = 
+    recInts (seed + magicNumber) (mkStdGen seed) where
+        recInts current g = 
+            let 
+                (i,g') = next g 
+                delta = (2 * (mod i 2) - 1) * step
+                current' = bounce (lowerBound, upperBound) start step $ current + delta
+            in current' : recInts current' g'
 ```
 
 The function of `bounce` is to "bounce" integers into the specified range if they stray from it.
@@ -202,7 +204,9 @@ Music is generated from a random walk by the function below:
 ```
 melGen2 :: (Int, Int) -> Int -> Int -> Int -> Music (Pitch, Volume)
 melGen2 (lowerBound, upperBound) start step seed = 
-    let pitches = map pitch $ boundedRandomWalk2 (lowerBound, upperBound) start step seed
+    let 
+        pitches = map pitch $ boundedRandomWalk2 
+                 (lowerBound, upperBound) start step seed
         vols = randIntsRange (40,100) (seed + 1)
     in  line $ map (note sn) $ zip pitches vols
 ```
