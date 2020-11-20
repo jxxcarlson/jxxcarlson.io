@@ -3,56 +3,49 @@
 <p>The three pieces below, <em>Duet</em>, <em>Nervous Chase</em>, and <em>Space Invaders</em>, were written using Paul Hudak’s Haskell library, <em>Euterpea</em>. I’ve learned everything that went into these compositions from <em>The Haskell School of Music</em>, by Paul Hudak and Donya Quick, and also from <a href="http://donyaquick.com/">Donya Quick’s website</a> and other resources she has published on the web.</p>
 <p>Here is the <a href="https://github.com/jxxcarlson/euterpea-exercises">repo for the code</a>.  It is badly in need of some cleanup and editing.  Soon!</p>
 <p>Below is a short snippet of Euterpea code, the “theme” from which <em>Duet</em> is composed.  It reads as follows: <em>Make a line of music beginning with a whole note D in octave 1, playing first a D minor triad in whole notes.  Follow this by a 5-note passage in quarter notes and end with half-note whole-note resolution.</em></p>
-<pre><code class="lang-haskell">bass1 :: Music Pitch
+<pre><code>bass1 :: Music Pitch
 bass1 = line $ [ d 1 wn, f 1 wn, a 1 wn,  g 1 1, f 1 qn, e 1 qn, d 1 qn
                , c 1 qn, e 1 hn, d 1 wn]
-</code></pre>
-<h2 id="duet">Duet</h2>
+</code></pre><h2 id="duet">Duet</h2>
 <audio controls="">
   <source src="/audio/duet.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <p>This piece is a duet between two bassoon-tuba combos, with a later entrance by a trombone ostinato.  It is composed using quasi-traditional rather than algorithmic methods, building up the piece by successive application of operators like <code>:+:</code> and <code>:=:</code> — the first joins pieces of music in series while the second stacks them in parallel. Here is a fragment derived from <code>bass1</code>:</p>
-<pre><code class="lang-haskell">bass2 d = instrument Bassoon $ bass1 
+<pre><code>bass2 d = instrument Bassoon $ bass1 
        :=: (instrument Tuba $ transpose 19 $ offset d $ retro $ bass1)
-</code></pre>
-<p>It reads as follows: play <code>bass1</code> on bassoon and stack it against a line derived from it played on Tuba.  To derive that line, offset <code>bass1</code> by <code>d</code> whole notes and then transpose it up 19 semitones, that is, an octave and a perfect fifth.  While the delayed entrance can be any rational multiple of a whole note, we use small integer multiples here.  </p>
+</code></pre><p>It reads as follows: play <code>bass1</code> on bassoon and stack it against a line derived from it played on Tuba.  To derive that line, offset <code>bass1</code> by <code>d</code> whole notes and then transpose it up 19 semitones, that is, an octave and a perfect fifth.  While the delayed entrance can be any rational multiple of a whole note, we use small integer multiples here.  </p>
 <p>Note that <code>bass2</code> is a function of type <code>Rational -&gt; Music Pitch</code>.  We use it to derive a set of four lines which we subsequently join end-to-end:</p>
-<pre><code class="lang-haskell">b1 = bass2 0 :+: rest wn
+<pre><code>b1 = bass2 0 :+: rest wn
 b2 = transpose 5 $ bass2 2 :+: rest wn
 b3 = retro $ transpose 7 $ bass2 4 :+: rest wn
 b4 = retro $ transpose 5 $ bass2 2 :+: rest wn
-</code></pre>
-<p>Each phrase ends with a whole-note rest so that when the pieces are joined end-to-end, there is 
+</code></pre><p>Each phrase ends with a whole-note rest so that when the pieces are joined end-to-end, there is 
 a bit of intervening silence.  The function <code>retro :: Music Pitch -&gt; Music Pitch</code> re-arranges
 the given notes in reverse order.  This is a <a href="https://en.wikipedia.org/wiki/Retrograde_(music">classic compositional technique</a>):</p>
 <blockquote>
 <p>Retrograde was not mentioned in theoretical treatises prior to 1500.[1] Nicola Vicentino (1555) discussed the difficulty in finding canonic imitation: “At times, the fugue or canon cannot be discovered through the systems mentioned above, either because of the impediment of rests, or because one part is going up while another is going down, or because one part starts at the beginning and the other at the end. In such cases a student can begin at the end and work back to the beginning in order to find where and in which voice he should begin the canons.”[2] Vicentino derided those who achieved purely intellectual pleasure from retrograde (and similar permutations).” — <em>Wikipedia</em></p>
 </blockquote>
 <p>A long line is constructed using these derived parts:</p>
-<pre><code class="lang-haskell">bass3 = b1 :+: b2 :+: b3 :+: b4 :+: dim 0.6 b1
-</code></pre>
-<p>The operator <code>dim 0.6</code> applies a <em>diminuendo</em> to its argument, the line <code>b1</code>. To achieve
+<pre><code>bass3 = b1 :+: b2 :+: b3 :+: b4 :+: dim 0.6 b1
+</code></pre><p>The operator <code>dim 0.6</code> applies a <em>diminuendo</em> to its argument, the line <code>b1</code>. To achieve
 a somewhat richer texture, a second part is composed as follows.</p>
-<pre><code class="lang-haskell">ostinato1 = instrument Trombone $ sta 0.9 $  
+<pre><code>ostinato1 = instrument Trombone $ sta 0.9 $  
    line [a 3 hn, d 3 hn, c 3 hn,  g 2 hn, e 3 hn, d 3 wn, rest wn]
 
 ostinato2 = mSequence [0, 2, 7, 5, 0] ostinato1 
    :+: (instrument Trombone $ dim 0.5 $ transpose (-5) 
        $ line [a 3 hn, d 3 hn, c 3 hn,  g 2 hn, e 3 wn, d 3 2])
-</code></pre>
-<p>The functions <code>sta 0.9</code> renders its argument with staccato articulation.  The function
+</code></pre><p>The functions <code>sta 0.9</code> renders its argument with staccato articulation.  The function
 <code>mSequence</code> makes a sequence out of the given phrase using the supplied list of intervals
 to transpose the phrase:</p>
-<pre><code class="lang-haskell">mSequence :: [Int] -&gt; Music a -&gt; Music a
+<pre><code>mSequence :: [Int] -&gt; Music a -&gt; Music a
 mSequence [] m = rest 0
 mSequence (i:is) m = (transpose i m) :+: (mSeq is m)
-</code></pre>
-<p>The last step is to stack the parts on top of one another:</p>
-<pre><code class="lang-haskell">duet = bass3 :=: (offset 6 $ transpose 12 $ bass3) :=: (offset 12 $ ostinato2)
-</code></pre>
-<p>One plays the piece like this:</p>
+</code></pre><p>The last step is to stack the parts on top of one another:</p>
+<pre><code>duet = bass3 :=: (offset 6 $ transpose 12 $ bass3) :=: (offset 12 $ ostinato2)
+</code></pre><p>One plays the piece like this:</p>
 <pre><code>playDev 6 duet
 </code></pre><p>Here the number 6 is the device ID for the synthesizer I happen to be using (fluidsynth).
 For MIDI output, I used</p>
@@ -75,31 +68,28 @@ Starting with the axiom, one uses the rules to generate ever more complex sequen
 <pre><code>A -&gt; AB -&gt; ABA -&gt; ABAAB -&gt; ABAABABA -&gt; ...
 </code></pre><p>One can use a system like this to generate a long string of symbols that can then be transcribed to music.
 Here is the <em>RedAlgae</em> formal grammar of <em>The Haskell School of Music:</em></p>
-<pre><code class="lang-haskell">redAlgae = DetGrammar 'a'
+<pre><code>redAlgae = DetGrammar 'a'
   [('a', "b|c"), ('b', "b"), ('c', "b|d"),
    ('d', "e\\d"), ('e', "f"), ('f', "g"),
    ('g', "h(a)"), ('h', "h"), ('|', "|"),
    ('(', "("), (')', ")"), ('/', "\\"),
    ('\\', "/")]
-</code></pre>
-<p>The twelve symbols “a” through “h” represent the twelve notes of a major scale with given starting pitch,
+</code></pre><p>The twelve symbols “a” through “h” represent the twelve notes of a major scale with given starting pitch,
 “/“ maps to a rest, “\” maps to rest four times as long.
 The other symbols map to operators on <code>Music Pitch</code> values, with “(“ mapping to the operator “transpose up 9 semitones” (a major sixth), and “)” mappping to “transpose down a major sixth.”   These are slight variations on the text of Hudak, pp. 186-7.</p>
 <p>The function below generates music from the <code>redAlgae</code> grammar
  given a length parameter <code>n</code>, an absolute pitch <code>ap</code>, and a duration value 
 for notes, <code>dur</code>:</p>
-<pre><code class="lang-haskell">lsMusic :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
+<pre><code>lsMusic :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
 lsMusic n ap dur = 
     strToMusic ap dur $ mconcat $ take n $ detGenerate redAlgae
-</code></pre>
-<p>The final piece is constructed from <code>lsMusic</code> using the operators <code>:+:</code> and <code>:=:</code> as well as
+</code></pre><p>The final piece is constructed from <code>lsMusic</code> using the operators <code>:+:</code> and <code>:=:</code> as well as
 functions to modify the performance, e.g., <code>cre</code> for crescendo:</p>
-<pre><code class="lang-haskell">nervousChase :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
+<pre><code>nervousChase :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
 nervousChase n ap dur = 
       cre 0.4 $ (instrument Xylophone $ phrase [Dyn (Loudness 70)] $ rest 2 :+: lsMusic n (ap + 7) (dur))
       :=: (cre 0.4 $ (dim 0.2 $ instrument Bassoon $ phrase [Dyn (Loudness 70), Art (Staccato 0.7)] $ lsMusic n ap (dur)))
-</code></pre>
-<p>It is important in a piece like this to have some kind of sectional structure.  Quite simple here, but it makes a difference.
+</code></pre><p>It is important in a piece like this to have some kind of sectional structure.  Quite simple here, but it makes a difference.
 The piece is played like this:</p>
 <pre><code>playDev 6 $ nervousChase 15 40 sn
 </code></pre><p>Here <code>sn</code> stands for “sixteenth note,” i.e., the rational number 1/16.</p>
@@ -113,23 +103,21 @@ The piece is played like this:</p>
 <p><em>Space Invasion</em> is based on the code and ideas in  <a href="https://github.com/Euterpea/Euterpea2-Examples/blob/master/NoteLevel/RandomMusic.lhs">some notes of Donya Quick</a>.  The main new element here is the 
 use of sequences of integers generated by bounded random walk as well as uniformly distributed sequences
 of integers.  Here is the bounded random walk generator:</p>
-<pre><code class="lang-haskell">boundedRandomWalk :: (Int, Int) -&gt; Int -&gt; Int -&gt; Int -&gt; [Int]
+<pre><code>boundedRandomWalk :: (Int, Int) -&gt; Int -&gt; Int -&gt; Int -&gt; [Int]
 boundedRandomWalk (lowerBound, upperBound) start step seed = recInts (seed + magicNumber) (mkStdGen seed) where
     recInts current g = let 
                             (i,g') = next g 
                             delta = (2 * (mod i 2) - 1) * step
                             current' = bounce (lowerBound, upperBound) start step $ current + delta
                             in current' : recInts current' g'
-</code></pre>
-<p>The function of <code>bounce</code> is to “bounce” integers into the specified range if they stray from it.
+</code></pre><p>The function of <code>bounce</code> is to “bounce” integers into the specified range if they stray from it.
 Music is generated from a random walk by the function below:</p>
-<pre><code class="lang-haskell">melGen2 :: (Int, Int) -&gt; Int -&gt; Int -&gt; Int -&gt; Music (Pitch, Volume)
+<pre><code>melGen2 :: (Int, Int) -&gt; Int -&gt; Int -&gt; Int -&gt; Music (Pitch, Volume)
 melGen2 (lowerBound, upperBound) start step seed = 
     let pitches = map pitch $ boundedRandomWalk2 (lowerBound, upperBound) start step seed
         vols = randIntsRange (40,100) (seed + 1)
     in  line $ map (note sn) $ zip pitches vols
-</code></pre>
-<p>There is a similar function <code>mel1</code> for generating music from the uniform distribution.
+</code></pre><p>There is a similar function <code>mel1</code> for generating music from the uniform distribution.
 With this code in hand, one can construct the final piece:</p>
 <pre><code>spaceInvasion s = chord [xylo s, bells s, marimba 12 s]
 
@@ -139,7 +127,8 @@ xylophone  n l h d r s =
 
 marimba :: Dur -&gt; Int -&gt; Music (Pitch, Volume)
 marimba n s = 
-   instrument Marimba $ cre 0.5 $ acc 0.4  $ cut n $ melGen2 (30, 80) 30 2 (234 + s)
+   instrument Marimba $ cre 0.5 $ acc 0.4  
+      $ cut n $ melGen2 (30, 80) 30 2 (234 + s)
 
 tubularBells n l h s = 
    instrument TubularBells $ cut n $ melGen2 (l, h) 45 4 (789 + s)
