@@ -28,12 +28,13 @@ b4 = retro $ transpose 5 $ bass2 2 :+: rest wn
 a bit of intervening silence.  The function <code>retro :: Music Pitch -&gt; Music Pitch</code> re-arranges
 the given notes in reverse order.  This is a <a href="https://en.wikipedia.org/wiki/Retrograde_(music">classic compositional technique</a>):</p>
 <blockquote>
-<p>Retrograde was not mentioned in theoretical treatises prior to 1500.[1] Nicola Vicentino (1555) discussed the difficulty in finding canonic imitation: “At times, the fugue or canon cannot be discovered through the systems mentioned above, either because of the impediment of rests, or because one part is going up while another is going down, or because one part starts at the beginning and the other at the end. In such cases a student can begin at the end and work back to the beginning in order to find where and in which voice he should begin the canons.”[2] Vicentino derided those who achieved purely intellectual pleasure from retrograde (and similar permutations).”</p>
+<p>Retrograde was not mentioned in theoretical treatises prior to 1500.[1] Nicola Vicentino (1555) discussed the difficulty in finding canonic imitation: “At times, the fugue or canon cannot be discovered through the systems mentioned above, either because of the impediment of rests, or because one part is going up while another is going down, or because one part starts at the beginning and the other at the end. In such cases a student can begin at the end and work back to the beginning in order to find where and in which voice he should begin the canons.”[2] Vicentino derided those who achieved purely intellectual pleasure from retrograde (and similar permutations).” — <em>Wikipedia</em></p>
 </blockquote>
 <p>A long line is constructed using these derived parts:</p>
 <pre><code class="lang-haskell">bass3 = b1 :+: b2 :+: b3 :+: b4 :+: dim 0.6 b1
 </code></pre>
-<p>The operator <code>dim 0.6</code> applies a <em>diminuendo</em> to its argument, the line <code>b1</code>. A second part is composed as follows.</p>
+<p>The operator <code>dim 0.6</code> applies a <em>diminuendo</em> to its argument, the line <code>b1</code>. To achieve
+a somewhat richer texture, a second part is composed as follows.</p>
 <pre><code class="lang-haskell">ostinato1 = instrument Trombone $ sta 0.9 $  
    line [a 3 hn, d 3 hn, c 3 hn,  g 2 hn, e 3 hn, d 3 wn, rest wn]
 
@@ -60,6 +61,39 @@ For MIDI output, I used</p>
 The edited MIDI file was exported to an audio file in AIFF format and then converted to MP3:</p>
 <pre><code>ffmpeg -i duet.aiff duet.mp3
 </code></pre><h2 id="nervous-chase">Nervous Chase</h2>
+<p><em>Nervouse Chase</em> is an exercise in the use of L-systems in musical composition, per Haskell School of Music, 
+chapter 13.  <a href="https://en.wikipedia.org/wiki/L-system">L-systems</a> were developed in 1968 
+by the Dutch-Hungarian theoretical biologist Aristid Lindenmayer as a matheamtical model to describe
+the growth and development of organisms such as algae and trees.  He<em>re is a simple example.  The L-system
+has two symbols, A and B, where A is the </em>axiom<em>.  It also has two </em>production rules*, A -&gt; AB and B -&gt; A.
+Starting with the axiom, one uses the rules to generate ever more complex sequences of symbols:</p>
+<pre><code>A -&gt; AB -&gt; ABA -&gt; ABAAB -&gt; ABAABABA -&gt; ...
+</code></pre><p>One can use a system like this to generate a long string of symbols that can then be transcribed to music.
+Here is the <em>RedAlgae</em> formal grammar of <em>The Haskell School of Music:</em></p>
+<pre><code>redAlgae = DetGrammar 'a'
+  [('a', "b|c"), ('b', "b"), ('c', "b|d"),
+   ('d', "e\\d"), ('e', "f"), ('f', "g"),
+   ('g', "h(a)"), ('h', "h"), ('|', "|"),
+   ('(', "("), (')', ")"), ('/', "\\"),
+   ('\\', "/")]
+</code></pre><p>The twelve symbols “a” through “h” represent the twelve notes of a major scale with given starting pitch,
+while the other symbols map to operators on <code>Music Pitch</code> values.  Thus “/“ maps to a rest, “\” maps to 
+rest four times as long, “(“ maps to the operator “transpose up 9 semitones” (a major sixth), and “)”
+maps to “transpose down a major sixth.”  These are slight variations on the text of Hudak, pp. 186-7.</p>
+<p>The function below generates music from the <code>redAlgae</code> grammar
+ given a length <code>n</code>, an absolute pitch <code>ap</code>, and a duration value 
+for notes, <code>dur</code>:</p>
+<pre><code class="lang-haskell">lsMusic :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
+lsMusic n ap dur = 
+    strToMusic ap dur $ mconcat $ take n $ detGenerate redAlgae
+</code></pre>
+<p>The final piece is constructed from <code>lsMusic</code> using the operators <code>:+:</code> and <code>:=:</code> as well as
+functions to modify the performance, e.g., <code>cre</code> for crescendo:</p>
+<pre><code>nervousChase :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
+nervousChase n ap dur = 
+      cre 0.4 $ (instrument Xylophone $ phrase [Dyn (Loudness 70)] $ rest 2 :+: lsMusic n (ap + 7) (dur))
+      :=: (cre 0.4 $ (dim 0.2 $ instrument Bassoon $ phrase [Dyn (Loudness 70), Art (Staccato 0.7)] $ lsMusic n ap (dur)))
+</code></pre><p>– Example: playDev 6 $ l2Music 15 40 sn</p>
  <audio controls="">
   <source src="/audio/nervousChase.mp3" type="audio/mpeg">
   Your browser does not support the audio element.

@@ -48,7 +48,7 @@ Each phrase ends with a whole-note rest so that when the pieces are joined end-t
 a bit of intervening silence.  The function `retro :: Music Pitch -> Music Pitch` re-arranges
 the given notes in reverse order.  This is a [classic compositional technique](https://en.wikipedia.org/wiki/Retrograde_(music)):
 
-> Retrograde was not mentioned in theoretical treatises prior to 1500.[1] Nicola Vicentino (1555) discussed the difficulty in finding canonic imitation: "At times, the fugue or canon cannot be discovered through the systems mentioned above, either because of the impediment of rests, or because one part is going up while another is going down, or because one part starts at the beginning and the other at the end. In such cases a student can begin at the end and work back to the beginning in order to find where and in which voice he should begin the canons."[2] Vicentino derided those who achieved purely intellectual pleasure from retrograde (and similar permutations)."
+> Retrograde was not mentioned in theoretical treatises prior to 1500.[1] Nicola Vicentino (1555) discussed the difficulty in finding canonic imitation: "At times, the fugue or canon cannot be discovered through the systems mentioned above, either because of the impediment of rests, or because one part is going up while another is going down, or because one part starts at the beginning and the other at the end. In such cases a student can begin at the end and work back to the beginning in order to find where and in which voice he should begin the canons."[2] Vicentino derided those who achieved purely intellectual pleasure from retrograde (and similar permutations)." — *Wikipedia*
 
 A long line is constructed using these derived parts:
 
@@ -56,7 +56,8 @@ A long line is constructed using these derived parts:
 bass3 = b1 :+: b2 :+: b3 :+: b4 :+: dim 0.6 b1
 ```
 
-The operator `dim 0.6` applies a *diminuendo* to its argument, the line `b1`. A second part is composed as follows.
+The operator `dim 0.6` applies a *diminuendo* to its argument, the line `b1`. To achieve
+a somewhat richer texture, a second part is composed as follows.
 
 ```haskell
 ostinato1 = instrument Trombone $ sta 0.9 $  
@@ -108,6 +109,56 @@ ffmpeg -i duet.aiff duet.mp3
 
 
 ## Nervous Chase
+
+*Nervouse Chase* is an exercise in the use of L-systems in musical composition, per Haskell School of Music, 
+chapter 13.  [L-systems](https://en.wikipedia.org/wiki/L-system) were developed in 1968 
+by the Dutch-Hungarian theoretical biologist Aristid Lindenmayer as a matheamtical model to describe
+the growth and development of organisms such as algae and trees.  He*re is a simple example.  The L-system
+has two symbols, A and B, where A is the *axiom*.  It also has two *production rules*, A -> AB and B -> A.
+Starting with the axiom, one uses the rules to generate ever more complex sequences of symbols:
+
+```
+A -> AB -> ABA -> ABAAB -> ABAABABA -> ...
+```
+
+One can use a system like this to generate a long string of symbols that can then be transcribed to music.
+Here is the *RedAlgae* formal grammar of *The Haskell School of Music:*
+
+```
+redAlgae = DetGrammar 'a'
+  [('a', "b|c"), ('b', "b"), ('c', "b|d"),
+   ('d', "e\\d"), ('e', "f"), ('f', "g"),
+   ('g', "h(a)"), ('h', "h"), ('|', "|"),
+   ('(', "("), (')', ")"), ('/', "\\"),
+   ('\\', "/")]
+```
+
+The twelve symbols "a" through "h" represent the twelve notes of a major scale with given starting pitch,
+while the other symbols map to operators on `Music Pitch` values.  Thus "/" maps to a rest, "\" maps to 
+rest four times as long, "(" maps to the operator "transpose up 9 semitones" (a major sixth), and ")"
+maps to "transpose down a major sixth."  These are slight variations on the text of Hudak, pp. 186-7.
+
+The function below generates music from the `redAlgae` grammar
+ given a length `n`, an absolute pitch `ap`, and a duration value 
+for notes, `dur`:
+
+```haskell
+lsMusic :: Int -> AbsPitch -> Dur -> Music Pitch
+lsMusic n ap dur = 
+    strToMusic ap dur $ mconcat $ take n $ detGenerate redAlgae
+```
+
+The final piece is constructed from `lsMusic` using the operators `:+:` and `:=:` as well as
+functions to modify the performance, e.g., `cre` for crescendo:
+
+```
+nervousChase :: Int -> AbsPitch -> Dur -> Music Pitch
+nervousChase n ap dur = 
+      cre 0.4 $ (instrument Xylophone $ phrase [Dyn (Loudness 70)] $ rest 2 :+: lsMusic n (ap + 7) (dur))
+      :=: (cre 0.4 $ (dim 0.2 $ instrument Bassoon $ phrase [Dyn (Loudness 70), Art (Staccato 0.7)] $ lsMusic n ap (dur)))
+```
+
+-- Example: playDev 6 $ l2Music 15 40 sn
 
  <audio controls>
   <source src="/audio/nervousChase.mp3" type="audio/mpeg">
