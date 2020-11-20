@@ -4,7 +4,7 @@
         <title>Author&apos;s blog</title>
         <link>https://jxxcarlson.io/posts</link>
         <description>Author&apos;s blog posts</description>
-        <lastBuildDate>Fri, 20 Nov 2020 16:09:19 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Nov 2020 16:12:06 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Elmstatic</generator>
         <language>en</language>
@@ -490,7 +490,7 @@ November 19, 2020
 
 The three pieces below, Duet, Nervous Chase, and Space Invaders, were written using Paul Hudak's Haskell library, Euterpea. I've learned everything that went into these compositions from The Haskell School of Music, by Paul Hudak and Donya Quick, and also from Donya Quick's website and other resources she has published on the web.
 
-The last piece, Space Invaders, is based on random sequences of integers, some produced by a uniform probability distributions, oth...]]></description>
+Comment. Musical composition is, among other things, the art of balancing novelty, repetition, and structure.  Pure randomness is f...]]></description>
         </item>
     </channel>
 </rss>

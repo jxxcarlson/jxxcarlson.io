@@ -9,15 +9,6 @@ tags: code fp music art rc
 
 The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were written using Paul Hudak's Haskell library, *Euterpea*. I've learned everything that went into these compositions from *The Haskell School of Music*, by Paul Hudak and Donya Quick, and also from [Donya Quick's website](http://donyaquick.com/) and other resources she has published on the web.
 
-The last piece, *Space Invaders*, is based on random sequences of integers, some produced by a uniform probability distributions, others produced by random walk (Brownian motion). These sequences can be used to make visual art as well as music.  We illustrate this with point emarks and images at the end of this post.  
-
-As a side note, both kinds of sequences can be used to produce noise: white noise and brown noise, respectively.  I find the first annoying (it is like static).  The latter is relaxing — more like the sound of the sea at dawn.
-
-The image below depicts the three lines of MIDI music in *Space Invaders*.   Can you guess
-which type of random sequence is used for each line of music?
-
-
-<img src="/img/random-white-brown.png" width=600>
 
 **Comment.** Musical composition is, among other things, the art of balancing novelty, repetition, and structure.  Pure randomness is fleetingly entertaining but not  musically satisfying.  If it is used, it must be managed so as to yield a composition with some structure.  *Space Invasion* achieves this to an extent by the use of three lines, each played on different instruments, with a variety of entrance and exit points.
 
@@ -28,6 +19,8 @@ which type of random sequence is used for each line of music?
   Your browser does not support the audio element.
 </audio> 
 
+*Duet* is constructed with traditional compositional principles, i.e., is not algorithmic.
+
 #### Nervous Chase
 
  <audio controls>
@@ -35,12 +28,26 @@ which type of random sequence is used for each line of music?
   Your browser does not support the audio element.
 </audio>
 
+*Nervous Chase* is based on the notion of L-systems, a kind of formal grammar that Aristid Lindenmayer used
+to describe the growth of plants.
+
 #### Space Invasion 
 
 <audio controls>
   <source src="/audio/spaceInvasion.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
+*Space Invaders*, is based on random sequences of integers, some produced by a uniform probability distributions, others produced by random walk (Brownian motion). These sequences can be used to make visual art as well as music.  We illustrate this with point emarks and images at the end of this post.  
+
+As a side note, both kinds of sequences can be used to produce noise: white noise and brown noise, respectively.  I find the first annoying (it is like static).  The latter is relaxing — more like the sound of the sea at dawn.
+
+The image below depicts the three lines of MIDI music in *Space Invaders*.   Can you guess
+which type of random sequence is used for each line of music?
+
+
+<img src="/img/random-white-brown.png" width=600>
+
 
 
 ## Program Notes
