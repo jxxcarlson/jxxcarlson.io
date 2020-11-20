@@ -139,9 +139,9 @@ redAlgae = DetGrammar 'a'
 ```
 
 The twelve symbols "a" through "h" represent the twelve notes of a major scale with given starting pitch,
-while the other symbols map to operators on `Music Pitch` values.  Thus "/" maps to a rest, "\" maps to 
-rest four times as long, "(" maps to the operator "transpose up 9 semitones" (a major sixth), and ")"
-maps to "transpose down a major sixth."  These are slight variations on the text of Hudak, pp. 186-7.
+"/" maps to a rest, "\" maps to rest four times as long.
+The other symbols map to operators on `Music Pitch` values, with "(" mapping to the operator "transpose up 9 semitones" (a major sixth), and ")" mappping to "transpose down a major sixth."  
+These are slight variations on the text of Hudak, pp. 186-7.
 
 The function below generates music from the `redAlgae` grammar
  given a length `n`, an absolute pitch `ap`, and a duration value 

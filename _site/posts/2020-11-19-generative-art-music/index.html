@@ -83,9 +83,8 @@ Here is the <em>RedAlgae</em> formal grammar of <em>The Haskell School of Music:
    ('\\', "/")]
 </code></pre>
 <p>The twelve symbols “a” through “h” represent the twelve notes of a major scale with given starting pitch,
-while the other symbols map to operators on <code>Music Pitch</code> values.  Thus “/“ maps to a rest, “\” maps to 
-rest four times as long, “(“ maps to the operator “transpose up 9 semitones” (a major sixth), and “)”
-maps to “transpose down a major sixth.”  These are slight variations on the text of Hudak, pp. 186-7.</p>
+“/“ maps to a rest, “\” maps to rest four times as long.
+The other symbols map to operators on <code>Music Pitch</code> values, with “(“ mapping to the operator “transpose up 9 semitones” (a major sixth), and “)” mappping to “transpose down a major sixth.”<br>These are slight variations on the text of Hudak, pp. 186-7.</p>
 <p>The function below generates music from the <code>redAlgae</code> grammar
  given a length <code>n</code>, an absolute pitch <code>ap</code>, and a duration value 
 for notes, <code>dur</code>:</p>
