@@ -18,7 +18,7 @@ The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were writ
 </audio> 
 
 <audio controls>
-  <source src="/audio/duet.aiff" type="audio/mpeg">
+  <source src="/audio/duet.aiff" type="audio/aiff">
   Your browser does not support the audio element.
 </audio> 
 
