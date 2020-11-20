@@ -2,6 +2,20 @@
 <p><em>November 19, 2020</em> </p>
 <p>The three pieces below, <em>Duet</em>, <em>Nervous Chase</em>, and <em>Space Invaders</em>, were written using Paul Hudak’s Haskell library, <em>Euterpea</em>. I’ve learned everything that went into these compositions from <em>The Haskell School of Music</em>, by Paul Hudak and Donya Quick, and also from <a href="http://donyaquick.com/">Donya Quick’s website</a> and other resources she has published on the web.</p>
 <p>The last piece, <em>Space Invaders</em>, is based on the notion of random walk (Brownian motion).  Random walk is, among other things, a method for generating sequences of random numbers.  These sequences can be used to make visual art as well as music.  We illustrate this with remarks and images at the end of this post.</p>
+<audio controls="">
+  <source src="/audio/duet.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> |
+ <audio controls="">
+  <source src="/audio/nervousChase.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> |
+<audio controls="">
+  <source src="/audio/spaceInvasion.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
 <p>Here is the <a href="https://github.com/jxxcarlson/euterpea-exercises">repo for the code</a>.  It is badly in need of some cleanup and editing.  Soon!</p>
 <p>Below is a short snippet of Euterpea code, the “theme” from which <em>Duet</em> is composed.  It reads as follows: <em>Make a line of music beginning with a whole note D in octave 1, playing first a D minor triad in whole notes.  Follow this by a 5-note passage in quarter notes and end with half-note whole-note resolution.</em></p>
 <pre><code>bass1 :: Music Pitch

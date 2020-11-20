@@ -11,6 +11,20 @@ The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were writ
 
 The last piece, *Space Invaders*, is based on the notion of random walk (Brownian motion).  Random walk is, among other things, a method for generating sequences of random numbers.  These sequences can be used to make visual art as well as music.  We illustrate this with remarks and images at the end of this post.
 
+<audio controls>
+  <source src="/audio/duet.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> |
+ <audio controls>
+  <source src="/audio/nervousChase.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> |
+<audio controls>
+  <source src="/audio/spaceInvasion.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
 Here is the [repo for the code](https://github.com/jxxcarlson/euterpea-exercises).  It is badly in need of some cleanup and editing.  Soon!
 
 Below is a short snippet of Euterpea code, the "theme" from which *Duet* is composed.  It reads as follows: *Make a line of music beginning with a whole note D in octave 1, playing first a D minor triad in whole notes.  Follow this by a 5-note passage in quarter notes and end with half-note whole-note resolution.*
