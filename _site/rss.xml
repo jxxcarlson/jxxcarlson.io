@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Author&apos;s blog</title>
+        <link>https://jxxcarlson.io/posts</link>
+        <description>Author&apos;s blog posts</description>
+        <lastBuildDate>Fri, 20 Nov 2020 05:57:21 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Elmstatic</generator>
+        <language>en</language>
+        <image>
+            <title>Author&apos;s blog</title>
+            <url>https://jxxcarlson.io/img/logo.png</url>
+            <link>https://jxxcarlson.io/posts</link>
+        </image>
+        <copyright>Copyright: Author</copyright>
+        <item>
+            <title><![CDATA[Type Theory, Agda and Some Good Books Thereon]]></title>
+            <link>https://jxxcarlson.io/posts/2019-06-02-type-theory</link>
+            <guid>https://jxxcarlson.io/posts/2019-06-02-type-theory</guid>
+            <pubDate>Sun, 02 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[In my quest to understand type theory, I came across
+links to two very good books. The first,
+Programming Language Foundations in Agda,
+by Philip Wadler, is available online.  The second,
+Verified Functional Programming in Agda, by Aaron Stump,
+is avaialble from Amazon for $79.95 paperback, $51.19 kindle.
+Ouf! Maybe less expensive elsewhere.
+
+Some progress
+
+For the last few days I've been working on both
+Wadler's notes (PLFA) and Stump's book (VFPA), going through
+all the examples with Agda (in ...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Greenhouse Equation]]></title>
+            <link>https://jxxcarlson.io/posts/2019-06-25-greenhouse-equation</link>
+            <guid>https://jxxcarlson.io/posts/2019-06-25-greenhouse-equation</guid>
+            <pubDate>Tue, 25 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+  (function () {
+
+    MathJax.Hub.Config(
+  				{ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  					processEscapes: true,
+  					messageStyle: "none",
+  					processSectionDelay: 0,
+  					processUpdateTime: 0,
+  					"fast-preview": {disabled: true},
+  					TeX: { equationNumbers: {autoNumber: "AMS"},
+  						   noErrors: {disabled: true},
+  						   extensions: ["mhchem.js"]
+  						  }
+  				}
+  	        );
+
+  if (typeof MathJaxListener !== 'undefined') {
+  	MathJax.Hub.Register.Star...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[A Fake Drum Language App]]></title>
+            <link>https://jxxcarlson.io/posts/2019-06-29-drum-language</link>
+            <guid>https://jxxcarlson.io/posts/2019-06-29-drum-language</guid>
+            <pubDate>Sat, 29 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Slit drum
+
+>> Fake Drum Language App — only works in Firefox
+
+The Information (James Gleick)
+
+Some time ago, I read James Gleick's book *The Information: a History,
+a Theory, a Flood.*  In the first chapter, he recounts the remarkable
+discovery of John F. Carrington, an English missionary, who took up
+residence in the Congo in 1938, working for the Baptist Missionary Society.
+On a trip from the Society's Yakutsu station on the Upper Congo River
+through the Bambole Forest, he realized that the lo...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Dev Log]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-08-log</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-08-log</guid>
+            <pubDate>Tue, 08 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[9/9/2020: Installed Euterpea, configured a synthesizer, and was able to run
+  a few examples and make music. Here is my
+  handy installation guide.
+
+9/8/2020: Push new version of jxxcarlson/elm-lisp.
+  The repo is cleaned up and I've added a Blackbox repl.  The elm-lisp is a skeleton for making a tiny typed Lisp,
+  and is intended for (my) educational purposes only.
+
+9/7/2020: Publish Umuli app.
+  UMULI = Universal Markup Language Interface.
+  Demonstrates a method for hosting multiple markup la...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[RC1: Getting ready for Fall 2020]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-08-rc</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-08-rc</guid>
+            <pubDate>Tue, 08 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[I've been accepted at the Recurse Center
+for the session beginning September 21, 2020.
+It will be twelve weeks pure joy, work, and learning, with
+all control knobs set to 10. Have looked over the profiles
+of some of the other RC participants.  Amazing in variety of interests and experience.
+
+About what to learn.  I've made a go at Haskell several times, but have never
+reached the point at which I can confidently build things
+with it.  At RC, there is a lot of interest in functional
+programming i...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Euterpea Reading Notes I]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-09-euterpea</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-09-euterpea</guid>
+            <pubDate>Wed, 09 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[I'm starting to read The Haskell School of Music, (HSM) by Paul Hudak
+and Donya Quick.  These notes show how to set up Euterpea, the
+Haskell package used in HSM.  We also give a few examples of
+how to construct and play music using Euterpea.  The examples, taken from [Euterpea2-Examples/NoteLevel/
+BlueLambda.lhs](https://github.com/Euterpea/Euterpea2-Examples/blob/master/NoteLevel/BlueLambda.lhs),
+are by Donya Quick.  Quick's website points to many good references on Euterpea and algorithmic mus...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Set up a Haskell Project with Stack]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-14-haskell</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-14-haskell</guid>
+            <pubDate>Mon, 14 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[In what follows we will set up a simple project using
+stack and see how to run code in the project using
+ghci, Haskell's interactive read-eval-print loop (repl).
+This program will print a message on the screen.  Next,
+we develop a program prints a random
+integer to the screen.  This will be done using
+randomIO in the System.Random module.  To use System.Random,
+we must find the package in which it is defined.
+We'll do this using Hackage, a
+search tool for packages. The next steps are
+
+Reference ...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Generative Art with Haskell]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-15-generative-art</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-15-generative-art</guid>
+            <pubDate>Tue, 15 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[In getting ready for RC, I've resurrected and old
+generative art repo which sets up a stack project
+for the artwork described in the post by Benjamin Kovach. I had some trouble building it, despite the fact
+that all the standard code for stack was in the repo.
+I had forgotten that the C library Cairo had to be installed
+separately, and that one had to have created the directory
+images/example_sketch.  If these are not done in advance,
+you will get difficult-to-understand (for me) errors when
+you...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Euterpea Reading Notes II]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-19-euterpea</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-19-euterpea</guid>
+            <pubDate>Sat, 19 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[This guide is a little log that I wrote am writing
+while reading the book The Haskell School of Music,
+by Paul Hudak and Donya Quick.
+
+Solutions to some of the exercises.
+(But try them yourself first!)
+
+Euterpea Quick Reference (PDF)
+
+Chapter 2
+
+2.1 Preliminaries
+
+I've found that good practice when starting a session
+with Euterpea is to check which device Euterpea will
+be talking to:
+
+> devices
+
+Input devices:
+  InputDeviceID 0       IAC Driver Bus 1
+
+Output devices:
+  OutputDeviceID 1      IAC ...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Chorale]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-20-euterpea</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-20-euterpea</guid>
+            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[This composition is an infinite minimalist chorale in four parts written in Haskell
+using the Euterpea library.  It is useful to compute its cycle length: the smallest number of beats after which the piece repeats itself. This turns out to be 156780 beats. At a metronome marking
+of 120 beats per minute, that means 21 hours 46 minutes and 30 seconds
+ of music.  Whew!
+
+With the cycle length in hand, one
+can construct a one-cycle finite version of the piece.
+It can then be exported to MIDI
+using th...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Algorithmic Music]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-21-algorithmic-music</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-21-algorithmic-music</guid>
+            <pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[In this post I mainly want to collect resources that I have found interesting.
+
+How Generative Music Works - a Perspective
+
+Phase Music (Wikipedia)
+
+Neural Nets for Generating Music. A historical perspective, from Chinese wind chimes
+to Markov chains, to recurrent neural networks (RNNs) and beyond. e.g,
+Convolutional Neural Networks,
+which are supposedly able to capture/produce higher-level structure.  Referenced in this article
+is Andrey Karpathy's post, The Unreasonable Effectiveness of Recurr...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Futhark, Getting Started]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-22-futhark</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-22-futhark</guid>
+            <pubDate>Tue, 22 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[futhark-lang.org
+
+Notes on Futhark
+
+Videos
+
+Troels Henriksen on Futhark (YouTube)
+
+Futhark, Demo and Interview (YouTube)
+
+Papers
+
+Compositional Deep Learning in Futhark, Troels Henriksen et al
+
+Support Vector Machines in Futhark
+
+Docs at troelshenriksen.dk
+
+Github
+
+Futswirl — Make fractals using Futhark
+
+github.com/jxxcarlson
+
+Discrete Heat Equation
+
+PCA
+...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Generating Images with Random Walks]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-22-gen-art</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-22-gen-art</guid>
+            <pubDate>Tue, 22 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[The images below were produce by a small Haskell program using random walks.  Random walk works like this.  Start at position (x0, y0).
+Then add small random increments dx and dy, say in the range from -1 to +1 to get
+(x1, y1) = (x0 + dx, y0 + dy).  Now generate new random numbers, also called
+dx and dy in the same range.  Let (x2, y2) = (x1 + dx. y1 + dy).  Do this
+many times to get a "random" sequence of points.  Draw a little square at each of these
+points.
+
+Random walk describes many physica...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Type Theory References]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-22-type-theory</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-22-type-theory</guid>
+            <pubDate>Tue, 22 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Courses and Books
+
+Philip Wadler, Programming Foundations in Agda
+
+Benjamin Pierce, Types and Programming Languages
+
+Robert Harper, Practical Foundations of Programming Languages
+
+Pfenning, CMU Logic Course
+
+Carlson, Brief Notes on Type Theory
+
+Other references
+
+Nordström, Petersson and Smith, Martin-Löf's Type Theory
+
+Palmgren, Lecture Notes on Type Theory
+
+Shulman, Basics of Type Theory
+
+Altenkirch, Introduction to (Homotopy) Type Theory
+
+Altenkirch, Briston talk
+...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Haskell Notes]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-23-haskell</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-23-haskell</guid>
+            <pubDate>Wed, 23 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Notes and resources for the Fall 2, 2020 batch
+at the Recurse Center
+
+Resources
+
+RC FP Study Group
+
+LearnHaskell Exercises
+
+Article on Monads from "A Neighborhood of Infinity"
+
+CIS 194 (Brent Yorgey, U Penn)
+
+My solutions (ahem!)
+
+Supplementary exercise on ordered trees
+
+Homework 11, baby Lisp eval.  *Very
+  limited*, but it can do this:
+
+    > eval "(product 2 (sum 3 4))"
+    Just (Num 14)
+
+  and do limited error reporting:
+
+    > eval "(product 2 (sum 3 4)"
+    Just BadSExpr
+...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Starting Elm]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-23-starting-elm</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-23-starting-elm</guid>
+            <pubDate>Wed, 23 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[I'll use my notes Intro to Elm
+for the Recurse Center Elm Hangouts
+that meet Friday at 11 am during Fall 2020.  The first
+meeting is intended for people with no experience in Elm.
+
+Resources
+
+Elm Guide
+
+elm-lang.org
+
+package.elm-lang.org/
+
+Elmprogramming.com
+...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Elm Demos]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-24-elm-demos</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-24-elm-demos</guid>
+            <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Many of the apps listed below were originally posted
+on my Github page along
+with comments and links to the code on Github.
+
+Fun & Simple Apps
+
+Weather
+
+Art
+
+Generative Art (Moving Image)
+
+Physics Simulations
+
+Billiards
+
+Bouncing Ball
+
+Brownian motion
+
+Heat Equation (SVG)
+
+Heat Equation (Web GL)
+
+Other Simulations
+
+Schellings Segregation Model
+
+Game of Life
+
+Caesar Cipher
+
+Vigenere Cipher
+
+Gambler's Ruin
+...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Medium.com Articles on Elm]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-24-elm-medium</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-24-elm-medium</guid>
+            <pubDate>Thu, 24 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Simulations
+
+Microbial I - A fake world full of micro-organisms.
+
+Schellings Segregation Model
+
+Billiards.
+  Simulation
+
+Brownian Motion.
+  Simulation
+
+At the Terminal
+
+Making Command Line Interpreters in Elm
+
+Running Elm as a Black Box
+
+CS Stuff
+
+On Outlines, Rose Trees, and Zippers
+
+A Pure Elm Markdown Parser
+
+Language Stuff
+
+Loops in Functional Languages
+
+Monads in Elm
+
+Implementing Mini-Languages
+
+A Typed Lisp in Elm
+
+Implementing the Mini-Language Arith in Elm
+
+Type-Checing the Mini-Languag...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Elm — Getting Started]]></title>
+            <link>https://jxxcarlson.io/posts/2020-09-25-elm</link>
+            <guid>https://jxxcarlson.io/posts/2020-09-25-elm</guid>
+            <pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[References
+
+Richard Feldman
+...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Adventures in Haskell (Servant)]]></title>
+            <link>https://jxxcarlson.io/posts/2020-10-03-haskell</link>
+            <guid>https://jxxcarlson.io/posts/2020-10-03-haskell</guid>
+            <pubDate>Sat, 03 Oct 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[October 3, 2020
+
+It is the end of my second week at RC,
+and I've decided to have a go
+at building a small project using Servant, the Haskell webserver library.
+The idea is to construct a PDF server — let's call it pdfServer.io —
+for files written in MiniLaTeX.  The flow of data goes like this:
+
+  A user requests a PDF of a MiniLaTeX document.
+  minilatex.lamdera.app sends a
+     POST request to pdfServer.io with the source text of the document.
+  pdfServer.io runs xelatex on the data received an...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Particles + Music in Haskell]]></title>
+            <link>https://jxxcarlson.io/posts/2020-10-09-particles-music</link>
+            <guid>https://jxxcarlson.io/posts/2020-10-09-particles-music</guid>
+            <pubDate>Fri, 09 Oct 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[((To be updated periodically, as my ideas take form (or crash)))
+
+This post is to outline some ideas for what might be my RC project
+and to collect some references for it.  The idea is to be able to
+write a score or program for producing a generative film coupled
+with a generative sound track.   For the film score,
+I'm considering Euterpea, so that makes some kind of
+Haskell program the logical choice for the generative film.
+Something like my old 2013 Processing
+project Seurat,
+but more sophist...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Generative Art and Music]]></title>
+            <link>https://jxxcarlson.io/posts/2020-11-19-generative-art-music</link>
+            <guid>https://jxxcarlson.io/posts/2020-11-19-generative-art-music</guid>
+            <pubDate>Thu, 19 Nov 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[RC Friday Show
+
+November 19, 2020
+
+The pieces below were written using Paul Hudak's Haskell library, Euterpea.
+I've learned everything that went into these compositions from The Haskell School of Music,
+by Paul Hudak and Donya Quick, and also from Donya Quick's website.
+
+Here is the repo for the code.  The
+repo is badly in need of some cleanup and editing.  Soon!
+
+Later I will add some short notes about the compositional process for the below.
+
+Duet
+
+  Your browser does not support the audio ele...]]></description>
+        </item>
+    </channel>
+</rss>
