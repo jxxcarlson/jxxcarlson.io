@@ -84,9 +84,9 @@ Here is the <em>RedAlgae</em> formal grammar of <em>The Haskell School of Music:
 </code></pre>
 <p>The twelve symbols “a” through “h” represent the twelve notes of a major scale with given starting pitch,
 “/“ maps to a rest, “\” maps to rest four times as long.
-The other symbols map to operators on <code>Music Pitch</code> values, with “(“ mapping to the operator “transpose up 9 semitones” (a major sixth), and “)” mappping to “transpose down a major sixth.”<br>These are slight variations on the text of Hudak, pp. 186-7.</p>
+The other symbols map to operators on <code>Music Pitch</code> values, with “(“ mapping to the operator “transpose up 9 semitones” (a major sixth), and “)” mappping to “transpose down a major sixth.”   These are slight variations on the text of Hudak, pp. 186-7.</p>
 <p>The function below generates music from the <code>redAlgae</code> grammar
- given a length <code>n</code>, an absolute pitch <code>ap</code>, and a duration value 
+ given a length parameter <code>n</code>, an absolute pitch <code>ap</code>, and a duration value 
 for notes, <code>dur</code>:</p>
 <pre><code class="lang-haskell">lsMusic :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
 lsMusic n ap dur = 
@@ -99,7 +99,8 @@ nervousChase n ap dur =
       cre 0.4 $ (instrument Xylophone $ phrase [Dyn (Loudness 70)] $ rest 2 :+: lsMusic n (ap + 7) (dur))
       :=: (cre 0.4 $ (dim 0.2 $ instrument Bassoon $ phrase [Dyn (Loudness 70), Art (Staccato 0.7)] $ lsMusic n ap (dur)))
 </code></pre>
-<p>The piece is played like this:</p>
+<p>It is important in a piece like this to have some kind of sectional structure.  Quite simple here, but it makes a difference.
+The piece is played like this:</p>
 <pre><code>playDev 6 $ nervousChase 15 40 sn
 </code></pre><p>Here <code>sn</code> stands for “sixteenth note,” i.e., the rational number 1/16.</p>
 <h2 id="space-invasion">Space Invasion</h2>

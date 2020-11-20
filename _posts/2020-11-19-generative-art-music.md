@@ -140,11 +140,10 @@ redAlgae = DetGrammar 'a'
 
 The twelve symbols "a" through "h" represent the twelve notes of a major scale with given starting pitch,
 "/" maps to a rest, "\" maps to rest four times as long.
-The other symbols map to operators on `Music Pitch` values, with "(" mapping to the operator "transpose up 9 semitones" (a major sixth), and ")" mappping to "transpose down a major sixth."  
-These are slight variations on the text of Hudak, pp. 186-7.
+The other symbols map to operators on `Music Pitch` values, with "(" mapping to the operator "transpose up 9 semitones" (a major sixth), and ")" mappping to "transpose down a major sixth."   These are slight variations on the text of Hudak, pp. 186-7.
 
 The function below generates music from the `redAlgae` grammar
- given a length `n`, an absolute pitch `ap`, and a duration value 
+ given a length parameter `n`, an absolute pitch `ap`, and a duration value 
 for notes, `dur`:
 
 ```haskell
@@ -163,6 +162,7 @@ nervousChase n ap dur =
       :=: (cre 0.4 $ (dim 0.2 $ instrument Bassoon $ phrase [Dyn (Loudness 70), Art (Staccato 0.7)] $ lsMusic n ap (dur)))
 ```
 
+It is important in a piece like this to have some kind of sectional structure.  Quite simple here, but it makes a difference.
 The piece is played like this:
 
 ```
