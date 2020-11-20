@@ -9,7 +9,7 @@ tags: code fp music art rc
 
 The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were written using Paul Hudak's Haskell library, *Euterpea*. I've learned everything that went into these compositions from *The Haskell School of Music*, by Paul Hudak and Donya Quick, and also from [Donya Quick's website](http://donyaquick.com/) and other resources she has published on the web.
 
-The last piece, *Space Invaders*, is based on random sequences of integers, some produced by a uniform probability distributions, others produced by random walk (Brownian motion). These sequences can be used to make visual art as well as music.  We illustrate this with point emarks and images at the end of this post. 
+The last piece, *Space Invaders*, is based on random sequences of integers, some produced by a uniform probability distributions, others produced by random walk (Brownian motion). These sequences can be used to make visual art as well as music.  We illustrate this with point emarks and images at the end of this post.  As a side note, both kinds of sequences can be used to produce noise: white noise and brown noise, respectively.  I find the first annoying (it is like static).  The latter is relaxing — more like the sound of the sea at dawn.
 
 The image below depicts the three lines of MIDI music in *Space Invaders*.   Can you guess
 which type of random sequence is used for each line of music?
