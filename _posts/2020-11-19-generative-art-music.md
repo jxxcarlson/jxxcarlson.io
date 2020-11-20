@@ -202,7 +202,7 @@ boundedRandomWalk (lowerBound, upperBound) start step seed =
 The function of `bounce` is to "bounce" integers into the specified range if they stray from it.
 Music is generated from a random walk by the function below:
 
-```
+```elm
 melGen2 :: (Int, Int) -> Int -> Int -> Int -> Music (Pitch, Volume)
 melGen2 (lowerBound, upperBound) start step seed = 
     let 
@@ -215,7 +215,7 @@ melGen2 (lowerBound, upperBound) start step seed =
 There is a similar function `mel1` for generating music from the uniform distribution.
 With this code in hand, one can construct the final piece:
 
-```
+```elm
 spaceInvasion s = chord [xylo s, bells s, marimba 12 s]
 
 xylophone :: Dur -> Int -> Int -> Dur -> Dur -> Int -> Music (Pitch, Volume)
