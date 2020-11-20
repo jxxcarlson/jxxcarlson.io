@@ -17,7 +17,7 @@ which type of sequence is used for each line of music?
 
 <img src="/img/random-white-brown.png" width=600>
 
-**Comment.** Musical composition is, among other things, the art of balancing novelty, repetition, and structure.  Pure randomness is fleetingly entertaining, but not  musically satisfying.  If it is used, it must be managed so as to yield a composition with some structure.  *Space Invasion* achieves some structure by the use of three lines, each played on different instruments, with a variety of entrance and exit points.
+**Comment.** Musical composition is, among other things, the art of balancing novelty, repetition, and structure.  Pure randomness is fleetingly entertaining but not  musically satisfying.  If it is used, it must be managed so as to yield a composition with some structure.  *Space Invasion* achieves some structure by the use of three lines, each played on different instruments, with a variety of entrance and exit points.
 
 #### Duet
 
