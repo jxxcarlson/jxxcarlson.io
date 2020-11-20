@@ -13,7 +13,7 @@ Here is the [repo for the code](https://github.com/jxxcarlson/euterpea-exercises
 
 Below is a short snippet of Euterpea code, the "theme" from which *Duet* is composed.  It reads as follows: *Make a line of music beginning with a whole note D in octave 1, playing first a D minor triad in whole notes.  Follow this by a 5-note passage in quarter notes and end with half-note whole-note resolution.*
 
-```
+```haskell
 bass1 :: Music Pitch
 bass1 = line $ [ d 1 wn, f 1 wn, a 1 wn,  g 1 1, f 1 qn, e 1 qn, d 1 qn
                , c 1 qn, e 1 hn, d 1 wn]
@@ -52,13 +52,13 @@ the given notes in reverse order.  This is a [classic compositional technique](h
 
 A long line is constructed using these derived parts:
 
-```
+```haskell
 bass3 = b1 :+: b2 :+: b3 :+: b4 :+: dim 0.6 b1
 ```
 
 The operator `dim 0.6` applies a *diminuendo* to its argument, the line `b1`. A second part is composed as follows.
 
-```
+```haskell
 ostinato1 = instrument Trombone $ sta 0.9 $  
    line [a 3 hn, d 3 hn, c 3 hn,  g 2 hn, e 3 hn, d 3 wn, rest wn]
 
@@ -71,7 +71,7 @@ The functions `sta 0.9` renders its argument with staccato articulation.  The fu
 `mSequence` makes a sequence out of the given phrase using the supplied list of intervals
 to transpose the phrase:
 
-```
+```haskell
 mSequence :: [Int] -> Music a -> Music a
 mSequence [] m = rest 0
 mSequence (i:is) m = (transpose i m) :+: (mSeq is m)
@@ -79,7 +79,7 @@ mSequence (i:is) m = (transpose i m) :+: (mSeq is m)
 
 The last step is to stack the parts on top of one another:
 
-```
+```haskell
 duet = bass3 :=: (offset 6 $ transpose 12 $ bass3) :=: (offset 12 $ ostinato2)
 ```
 
@@ -93,7 +93,7 @@ Here the number 6 is the device ID for the synthesizer I happen to be using (flu
 For MIDI output, I used
 
 ```
-writeMide "duet.MID" duet
+writeMidi "duet.MID" duet
 ```
 
 I imported the MIDI file into Logic Pro for processing: balancing the parts, adding more reverb, etc.
