@@ -36,7 +36,7 @@ to describe the growth of plants.
   Your browser does not support the audio element.
 </audio>
 
-*Space Invaders*, is based on random sequences of integers, some produced by a uniform probability distributions, others produced by random walk (Brownian motion). These sequences can be used to make visual art as well as music.  We illustrate this with point emarks and images at the end of this post.  
+*Space Invaders*, is based on random sequences of integers, some produced by a uniform probability distributions, others produced by random walk (Brownian motion). These sequences can be used to make visual art as well as music.  We illustrate this with points and  remarks and images at the end of this post.  
 
 As a side note, both kinds of sequences can be used to produce noise: white noise and brown noise, respectively.  I find the first annoying (it is like static).  The latter is relaxing — more like the sound of the sea at dawn.
 
