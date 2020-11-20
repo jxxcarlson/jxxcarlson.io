@@ -214,13 +214,19 @@ With this code in hand, one can construct the final piece:
 spaceInvasion s = chord [xylo s, bells s, marimba 12 s]
 
 xylophone :: Dur -> Int -> Int -> Dur -> Dur -> Int -> Music (Pitch, Volume)
-xylophone  n l h d r s = instrument Xylophone $ dim d $ rit r $ cut n $ melGen1 (l, h) (345 + s)
+xylophone  n l h d r s = 
+  instrument Xylophone $ dim d $ rit r $ cut n $ melGen1 (l, h) (345 + s)
 
 marimba :: Dur -> Int -> Music (Pitch, Volume)
-marimba n s = instrument Marimba $ cre 0.5 $ acc 0.4  $ cut n $ melGen2 (30, 80) 30 2 (234 + s)
+marimba n s = 
+   instrument Marimba $ cre 0.5 $ acc 0.4  $ cut n $ melGen2 (30, 80) 30 2 (234 + s)
 
-tubularBells n l h s = instrument TubularBells $ cut n $ melGen2 (l, h) 45 4 (789 + s)
+tubularBells n l h s = 
+   instrument TubularBells $ cut n $ melGen2 (l, h) 45 4 (789 + s)
 
-xylo s = xylophone 5 10 110 0 0 s :+: rest 2 :+: xylophone (2 + hn) 10 110 0.5 0.5 (2 * s)
-bells s = rest 1 :+: tubularBells 2 30 60 s :+: rest 1 :+: tubularBells 2 20 100 (2 * s)
+xylo s =  xylophone 5 10 110 0 0 s :+: rest 2 
+          :+: xylophone (2 + hn) 10 110 0.5 0.5 (2 * s)
+          
+bells s = rest 1 :+: tubularBells 2 30 60 s :+: rest 1 
+          :+: tubularBells 2 20 100 (2 * s)
 ```
