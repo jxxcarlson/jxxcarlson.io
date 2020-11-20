@@ -24,7 +24,7 @@ The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were writ
   Your browser does not support the audio element.
 </audio> 
 
-^^ High quality version
+^^ High quality version (18mb .wav file versus 1.3mb .mp3; you hear the difference!)
 
 *Duet* is constructed with traditional compositional principles, i.e., is not algorithmic.
 
@@ -80,6 +80,12 @@ bass1 = line $ [ d 1 wn, f 1 wn, a 1 wn,  g 1 1, f 1 qn, e 1 qn, d 1 qn
   <source src="/audio/duet.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+<audio controls>
+  <source src="/audio/duet.wav" type="audio/x-wav">
+  Your browser does not support the audio element.
+</audio> 
+
+^^ High quality version (18mb .wav file versus 1.3mb .mp3; you hear the difference!
 
 [Code](https://github.com/jxxcarlson/euterpea-exercises/blob/master/src/Duet.hs)
 
