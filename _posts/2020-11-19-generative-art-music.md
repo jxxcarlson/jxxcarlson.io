@@ -27,6 +27,8 @@ bass1 = line $ [ d 1 wn, f 1 wn, a 1 wn,  g 1 1, f 1 qn, e 1 qn, d 1 qn
   Your browser does not support the audio element.
 </audio>
 
+[Code](https://github.com/jxxcarlson/euterpea-exercises/blob/master/src/Duet.hs)
+
 This piece is a duet between two bassoon-tuba combos, with a later entrance by a trombone ostinato.  It is composed using quasi-traditional rather than algorithmic methods, building up the piece by successive application of operators like `:+:` and `:=:` — the first joins pieces of music in series while the second stacks them in parallel. Here is a fragment derived from `bass1`:
 
 ```
@@ -115,6 +117,8 @@ ffmpeg -i duet.aiff duet.mp3
   Your browser does not support the audio element.
 </audio>
 
+[Code](https://github.com/jxxcarlson/euterpea-exercises/blob/master/src/NervousChase.hs)
+
 *Nervous Chase* is an exercise in the use of L-systems in musical composition, per Haskell School of Music, 
 chapter 13.  [L-systems](https://en.wikipedia.org/wiki/L-system) were developed in 1968 
 by the Dutch-Hungarian theoretical biologist Aristid Lindenmayer as a matheamtical model to describe
@@ -180,6 +184,9 @@ Here `sn` stands for "sixteenth note," i.e., the rational number 1/16.
   <source src="/audio/spaceInvasion.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
+
+[Code](https://github.com/jxxcarlson/euterpea-exercises/blob/master/src/SpaceInvasion.lhs)
 
 
 *Space Invasion* is based on the code and ideas in  [some notes of Donya Quick](https://github.com/Euterpea/Euterpea2-Examples/blob/master/NoteLevel/RandomMusic.lhs).  The main new element here is the 
