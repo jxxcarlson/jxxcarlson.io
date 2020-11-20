@@ -7,7 +7,7 @@ tags: code fp music art rc
 
 *November 19, 2020* 
 
-The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*m were written using Paul Hudak's Haskell library, *Euterpea*. I've learned everything that went into these compositions from *The Haskell School of Music*, by Paul Hudak and Donya Quick, and also from [Donya Quick's website](http://donyaquick.com/) and other resources she has published on the web.
+The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were written using Paul Hudak's Haskell library, *Euterpea*. I've learned everything that went into these compositions from *The Haskell School of Music*, by Paul Hudak and Donya Quick, and also from [Donya Quick's website](http://donyaquick.com/) and other resources she has published on the web.
 
 Here is the [repo for the code](https://github.com/jxxcarlson/euterpea-exercises).  It is badly in need of some cleanup and editing.  Soon!
 
@@ -29,7 +29,7 @@ bass1 = line $ [ d 1 wn, f 1 wn, a 1 wn,  g 1 1, f 1 qn, e 1 qn, d 1 qn
 
 This piece is a duet between two bassoon-tuba combos, with a later entrance by a trombone ostinato.  It is composed using quasi-traditional rather than algorithmic methods, building up the piece by successive application of operators like `:+:` and `:=:` — the first joins pieces of music in series while the second stacks them in parallel. Here is a fragment derived from `bass1`:
 
-```
+```haskell
 bass2 d = instrument Bassoon $ bass1 
        :=: (instrument Tuba $ transpose 19 $ offset d $ retro $ bass1)
 ```
@@ -38,7 +38,7 @@ It reads as follows: play `bass1` on bassoon and stack it against a line derived
 
 Note that `bass2` is a function of type `Rational -> Music Pitch`.  We use it to derive a set of four lines which we subsequently join end-to-end:
 
-```
+```haskell
 b1 = bass2 0 :+: rest wn
 b2 = transpose 5 $ bass2 2 :+: rest wn
 b3 = retro $ transpose 7 $ bass2 4 :+: rest wn
