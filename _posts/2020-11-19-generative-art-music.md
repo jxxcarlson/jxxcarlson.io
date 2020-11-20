@@ -110,6 +110,11 @@ ffmpeg -i duet.aiff duet.mp3
 
 ## Nervous Chase
 
+ <audio controls>
+  <source src="/audio/nervousChase.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 *Nervouse Chase* is an exercise in the use of L-systems in musical composition, per Haskell School of Music, 
 chapter 13.  [L-systems](https://en.wikipedia.org/wiki/L-system) were developed in 1968 
 by the Dutch-Hungarian theoretical biologist Aristid Lindenmayer as a matheamtical model to describe
@@ -166,10 +171,7 @@ playDev 6 $ nervousChase 15 40 sn
 
 Here `sn` stands for "sixteenth note," i.e., the rational number 1/16.
 
- <audio controls>
-  <source src="/audio/nervousChase.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+
 
 ## Space Invasion
 

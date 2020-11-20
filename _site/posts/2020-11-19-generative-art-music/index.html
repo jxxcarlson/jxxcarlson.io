@@ -61,6 +61,11 @@ For MIDI output, I used</p>
 The edited MIDI file was exported to an audio file in AIFF format and then converted to MP3:</p>
 <pre><code>ffmpeg -i duet.aiff duet.mp3
 </code></pre><h2 id="nervous-chase">Nervous Chase</h2>
+ <audio controls="">
+  <source src="/audio/nervousChase.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <p><em>Nervouse Chase</em> is an exercise in the use of L-systems in musical composition, per Haskell School of Music, 
 chapter 13.  <a href="https://en.wikipedia.org/wiki/L-system">L-systems</a> were developed in 1968 
 by the Dutch-Hungarian theoretical biologist Aristid Lindenmayer as a matheamtical model to describe
@@ -98,11 +103,6 @@ nervousChase n ap dur =
 <p>The piece is played like this:</p>
 <pre><code>playDev 6 $ nervousChase 15 40 sn
 </code></pre><p>Here <code>sn</code> stands for “sixteenth note,” i.e., the rational number 1/16.</p>
- <audio controls="">
-  <source src="/audio/nervousChase.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
 <h2 id="space-invasion">Space Invasion</h2>
 <audio controls="">
   <source src="/audio/spaceInvasion.mp3" type="audio/mpeg">
