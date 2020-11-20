@@ -70,13 +70,14 @@ Starting with the axiom, one uses the rules to generate ever more complex sequen
 <pre><code>A -&gt; AB -&gt; ABA -&gt; ABAAB -&gt; ABAABABA -&gt; ...
 </code></pre><p>One can use a system like this to generate a long string of symbols that can then be transcribed to music.
 Here is the <em>RedAlgae</em> formal grammar of <em>The Haskell School of Music:</em></p>
-<pre><code>redAlgae = DetGrammar 'a'
+<pre><code class="lang-haskell">redAlgae = DetGrammar 'a'
   [('a', "b|c"), ('b', "b"), ('c', "b|d"),
    ('d', "e\\d"), ('e', "f"), ('f', "g"),
    ('g', "h(a)"), ('h', "h"), ('|', "|"),
    ('(', "("), (')', ")"), ('/', "\\"),
    ('\\', "/")]
-</code></pre><p>The twelve symbols “a” through “h” represent the twelve notes of a major scale with given starting pitch,
+</code></pre>
+<p>The twelve symbols “a” through “h” represent the twelve notes of a major scale with given starting pitch,
 while the other symbols map to operators on <code>Music Pitch</code> values.  Thus “/“ maps to a rest, “\” maps to 
 rest four times as long, “(“ maps to the operator “transpose up 9 semitones” (a major sixth), and “)”
 maps to “transpose down a major sixth.”  These are slight variations on the text of Hudak, pp. 186-7.</p>
@@ -89,11 +90,14 @@ lsMusic n ap dur =
 </code></pre>
 <p>The final piece is constructed from <code>lsMusic</code> using the operators <code>:+:</code> and <code>:=:</code> as well as
 functions to modify the performance, e.g., <code>cre</code> for crescendo:</p>
-<pre><code>nervousChase :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
+<pre><code class="lang-haskell">nervousChase :: Int -&gt; AbsPitch -&gt; Dur -&gt; Music Pitch
 nervousChase n ap dur = 
       cre 0.4 $ (instrument Xylophone $ phrase [Dyn (Loudness 70)] $ rest 2 :+: lsMusic n (ap + 7) (dur))
       :=: (cre 0.4 $ (dim 0.2 $ instrument Bassoon $ phrase [Dyn (Loudness 70), Art (Staccato 0.7)] $ lsMusic n ap (dur)))
-</code></pre><p>– Example: playDev 6 $ l2Music 15 40 sn</p>
+</code></pre>
+<p>The piece is played like this:</p>
+<pre><code>playDev 6 $ nervousChase 15 40 sn
+</code></pre><p>Here <code>sn</code> stands for “sixteenth note,” i.e., the rational number 1/16.</p>
  <audio controls="">
   <source src="/audio/nervousChase.mp3" type="audio/mpeg">
   Your browser does not support the audio element.

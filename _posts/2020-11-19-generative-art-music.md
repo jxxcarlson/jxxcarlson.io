@@ -124,7 +124,7 @@ A -> AB -> ABA -> ABAAB -> ABAABABA -> ...
 One can use a system like this to generate a long string of symbols that can then be transcribed to music.
 Here is the *RedAlgae* formal grammar of *The Haskell School of Music:*
 
-```
+```haskell
 redAlgae = DetGrammar 'a'
   [('a', "b|c"), ('b', "b"), ('c', "b|d"),
    ('d', "e\\d"), ('e', "f"), ('f', "g"),
@@ -151,14 +151,20 @@ lsMusic n ap dur =
 The final piece is constructed from `lsMusic` using the operators `:+:` and `:=:` as well as
 functions to modify the performance, e.g., `cre` for crescendo:
 
-```
+```haskell
 nervousChase :: Int -> AbsPitch -> Dur -> Music Pitch
 nervousChase n ap dur = 
       cre 0.4 $ (instrument Xylophone $ phrase [Dyn (Loudness 70)] $ rest 2 :+: lsMusic n (ap + 7) (dur))
       :=: (cre 0.4 $ (dim 0.2 $ instrument Bassoon $ phrase [Dyn (Loudness 70), Art (Staccato 0.7)] $ lsMusic n ap (dur)))
 ```
 
--- Example: playDev 6 $ l2Music 15 40 sn
+The piece is played like this:
+
+```
+playDev 6 $ nervousChase 15 40 sn
+```
+
+Here `sn` stands for "sixteenth note," i.e., the rational number 1/16.
 
  <audio controls>
   <source src="/audio/nervousChase.mp3" type="audio/mpeg">
