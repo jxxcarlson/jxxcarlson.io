@@ -12,18 +12,21 @@ The three pieces below, *Duet*, *Nervous Chase*, and *Space Invaders*, were writ
 The last piece, *Space Invaders*, is based on the notion of random walk (Brownian motion).  Random walk is, among other things, a method for generating sequences of random numbers.  These sequences can be used to make visual art as well as music.  We illustrate this with remarks and images at the end of this post.
 
 **Duet**
+
 <audio controls>
   <source src="/audio/duet.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio> 
 
 **Nervous Chase**
+
  <audio controls>
   <source src="/audio/nervousChase.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-**Space Invasion**
+**Space Invasion** 
+
 <audio controls>
   <source src="/audio/spaceInvasion.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
