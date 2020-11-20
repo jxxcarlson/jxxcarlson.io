@@ -4,7 +4,7 @@
         <title>Author&apos;s blog</title>
         <link>https://jxxcarlson.io/posts</link>
         <description>Author&apos;s blog posts</description>
-        <lastBuildDate>Fri, 20 Nov 2020 06:11:59 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Nov 2020 13:29:51 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Elmstatic</generator>
         <language>en</language>
@@ -489,17 +489,11 @@ but more sophist...]]></description>
 November 19, 2020
 
 The pieces below were written using Paul Hudak's Haskell library, Euterpea.
-I've learned everything that went into these compositions from The Haskell School of Music,
-by Paul Hudak and Donya Quick, and also from Donya Quick's website.
+I've learned everything that went into these compositions from The Haskell School of Music, by Paul Hudak and Donya Quick, and also from Donya Quick's website.
 
-Here is the repo for the code.  The
-repo is badly in need of some cleanup and editing.  Soon!
+Here is the repo for the code.  It is badly in need of some cleanup and editing.  Soon!
 
-Later I will add some short notes about the compositional process for the below.
-
-Duet
-
-  Your browser does not support the audio ele...]]></description>
+Below is a short snippet of Euterpea code, the "theme" from which Duet is composed.  It reads as follows: Make a line of music beginning wi...]]></description>
         </item>
     </channel>
 </rss>

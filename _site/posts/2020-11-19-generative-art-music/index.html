@@ -1,18 +1,59 @@
 <!doctype html><html><head><title>Generative Art and Music | jxxcarlson</title><meta charset="utf-8"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/highlight.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/languages/elm.min.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/styles/default.min.css" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Open+Sans|Proza+Libre|Inconsolata" rel="stylesheet" type="text/css"></head><body><div class="header-logo"><img alt="Author's blog" src="/img/logo.png" width="35"></div><div class="navigation"><ul><li><a href="/about">Home</a></li><li><a href="/posts">Posts</a></li><li><a href="/apps">Apps</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="sidebar"></div><div class="sidebar2"></div><div class="content"><h1>Generative Art and Music</h1><div class="post-metadata"><span>2020-11-19</span><span>•</span><a href="/tags/code">code</a><a href="/tags/fp">fp</a><a href="/tags/music">music</a><a href="/tags/art">art</a><a href="/tags/rc">rc</a></div><div class="markdown"><h1 id="rc-friday-show">RC Friday Show</h1>
 <p><em>November 19, 2020</em> </p>
 <p>The pieces below were written using Paul Hudak’s Haskell library, <em>Euterpea</em>.
-I’ve learned everything that went into these compositions from <em>The Haskell School of Music</em>,
-by Paul Hudak and Donya Quick, and also from <a href="http://donyaquick.com/">Donya Quick’s website</a>.</p>
-<p>Here is the <a href="https://github.com/jxxcarlson/euterpea-exercises">repo for the code</a>.  The 
-repo is badly in need of some cleanup and editing.  Soon!</p>
-<p>Later I will add some short notes about the compositional process for the below.</p>
-<h2 id="duet">Duet</h2>
+I’ve learned everything that went into these compositions from <em>The Haskell School of Music</em>, by Paul Hudak and Donya Quick, and also from <a href="http://donyaquick.com/">Donya Quick’s website</a>.</p>
+<p>Here is the <a href="https://github.com/jxxcarlson/euterpea-exercises">repo for the code</a>.  It is badly in need of some cleanup and editing.  Soon!</p>
+<p>Below is a short snippet of Euterpea code, the “theme” from which <em>Duet</em> is composed.  It reads as follows: <em>Make a line of music beginning with a whole note D in octave 1, playing first a D minor triad in whole notes.  Follow this by a 5-note passage in quarter notes and end with half-note whole-note resolution.</em></p>
+<pre><code>bass1 :: Music Pitch
+bass1 = line $ [ d 1 wn, f 1 wn, a 1 wn,  g 1 1, f 1 qn, e 1 qn, d 1 qn
+               , c 1 qn, e 1 hn, d 1 wn]
+</code></pre><h2 id="duet">Duet</h2>
 <audio controls="">
   <source src="/audio/duet.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<h2 id="nervous-chase">Nervous Chase</h2>
+<p>This piece is a duet between two bassoon-tuba combos, with a later entrance by a trombone ostinato.  It is composed using quasi-traditional rather than algorithmic methods, building up the piece by successive application of operators like <code>:+:</code> and <code>:=:</code> — the first joins pieces of music in series while the second stacks them in parallel. Here is a fragment derived from <code>bass1</code>:</p>
+<pre><code>bass2 d = instrument Bassoon $ bass1 
+       :=: (instrument Tuba $ transpose 19 $ offset d $ retro $ bass1)
+</code></pre><p>It reads as follows: play <code>bass1</code> on bassoon and stack it against a line derived from it played on Tuba.  To derive that line, offset <code>bass1</code> by <code>d</code> whole notes and then transpose it up 19 semitones, that is, an octave and a perfect fifth.  While the delayed entrance can be any rational multiple of a whole note, we use small integer multiples here.  </p>
+<p>Note that <code>bass2</code> is a function of type <code>Rational -&gt; Music Pitch</code>.  We use it to derive a set of four lines which we subsequently join end-to-end:</p>
+<pre><code>b1 = bass2 0 :+: rest wn
+b2 = transpose 5 $ bass2 2 :+: rest wn
+b3 = retro $ transpose 7 $ bass2 4 :+: rest wn
+b4 = retro $ transpose 5 $ bass2 2 :+: rest wn
+</code></pre><p>Each phrase ends with a whole-note rest so that when the pieces are joined end-to-end, there is 
+a bit of intervening silence.  The function <code>retro :: Music Pitch -&gt; Music Pitch</code> re-arranges
+the given notes in reverse order.  This is a <a href="https://en.wikipedia.org/wiki/Retrograde_(music">classic compositional technique</a>):</p>
+<blockquote>
+<p>Retrograde was not mentioned in theoretical treatises prior to 1500.[1] Nicola Vicentino (1555) discussed the difficulty in finding canonic imitation: “At times, the fugue or canon cannot be discovered through the systems mentioned above, either because of the impediment of rests, or because one part is going up while another is going down, or because one part starts at the beginning and the other at the end. In such cases a student can begin at the end and work back to the beginning in order to find where and in which voice he should begin the canons.”[2] Vicentino derided those who achieved purely intellectual pleasure from retrograde (and similar permutations).”</p>
+</blockquote>
+<p>A long line is constructed using these derived parts:</p>
+<pre><code>bass3 = b1 :+: b2 :+: b3 :+: b4 :+: dim 0.6 b1
+</code></pre><p>The operator <code>dim 0.6</code> applies a <em>diminuendo</em> to its argument, the line <code>b1</code>. A second part is composed as follows.</p>
+<pre><code>ostinato1 = instrument Trombone $ sta 0.9 $  
+   line [a 3 hn, d 3 hn, c 3 hn,  g 2 hn, e 3 hn, d 3 wn, rest wn]
+
+ostinato2 = mSequence [0, 2, 7, 5, 0] ostinato1 
+   :+: (instrument Trombone $ dim 0.5 $ transpose (-5) 
+       $ line [a 3 hn, d 3 hn, c 3 hn,  g 2 hn, e 3 wn, d 3 2])
+</code></pre><p>The functions <code>sta 0.9</code> renders its argument with staccato articulation.  The function
+<code>mSequence</code> makes a sequence out of the given phrase using the supplied list of intervals
+to transpose the phrase:</p>
+<pre><code>mSequence :: [Int] -&gt; Music a -&gt; Music a
+mSequence [] m = rest 0
+mSequence (i:is) m = (transpose i m) :+: (mSeq is m)
+</code></pre><p>The last step is to stack the parts on top of one another:</p>
+<pre><code>duet = bass3 :=: (offset 6 $ transpose 12 $ bass3) :=: (offset 12 $ ostinato2)
+</code></pre><p>One plays the piece like this:</p>
+<pre><code>playDev 6 duet
+</code></pre><p>Here the number 6 is the device ID for the synthesizer I happen to be using (fluidsynth).
+For MIDI output, I used</p>
+<pre><code>writeMide "duet.MID" duet
+</code></pre><p>I imported the MIDI file into Logic Pro for processing: balancing the parts, adding more reverb, etc.
+The edited MIDI file was exported to an audio file in AIFF format and then converted to MP3:</p>
+<pre><code>ffmpeg -i duet.aiff duet.mp3
+</code></pre><h2 id="nervous-chase">Nervous Chase</h2>
  <audio controls="">
   <source src="/audio/nervousChase.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
