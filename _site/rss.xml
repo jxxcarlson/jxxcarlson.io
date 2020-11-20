@@ -4,7 +4,7 @@
         <title>Author&apos;s blog</title>
         <link>https://jxxcarlson.io/posts</link>
         <description>Author&apos;s blog posts</description>
-        <lastBuildDate>Fri, 20 Nov 2020 16:40:38 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Nov 2020 16:59:26 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Elmstatic</generator>
         <language>en</language>
@@ -494,7 +494,9 @@ Duet
 
   Your browser does not support the audio element.
 
-Duet is constructed with traditional compositional principles, i.e., is n...]]></description>
+  Your browser does not support the audio element.
+
+^^ High quality versi...]]></description>
         </item>
     </channel>
 </rss>
